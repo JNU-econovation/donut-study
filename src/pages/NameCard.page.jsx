@@ -1,13 +1,14 @@
 import { LayOut } from "../common/LayOut";
-import { NameCard } from "../components/mission-1/NameCard";
+import { NameCard } from "../components/NameCard";
+import "../style/Pages.style.css";
 
-export const NameCardPage = ({}) => {
+export const NameCardPage = () => {
   return (
-    <>
-      <LayOut>
+    <LayOut>
+      <div className="card-component-container">
         <NameCard />
-      </LayOut>
-    </>
+      </div>
+    </LayOut>
   );
 };
 
