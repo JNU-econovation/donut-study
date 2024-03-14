@@ -1,11 +1,11 @@
 import { Header } from "./Header";
 
-export const LayOut = () => {
+export const LayOut = ({ children }) => {
   return (
     <>
       <Header />
       <nav></nav>
-      <main></main>
+      <main>{children}</main>
       <footer></footer>
     </>
   );
