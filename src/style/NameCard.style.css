@@ -45,3 +45,8 @@
 .card-title {
   margin-bottom: 5rem;
 }
+
+.card-content {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
