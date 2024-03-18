@@ -3,6 +3,9 @@ import ProfileImage from '@image/ProfileImage.png';
 import { fontSize, fontWeight } from '../styles/theme';
 
 const Card = () => {
+  const githubUrl = 'https://github.com/Klomachenko';
+  const youtubeUrl = 'https://www.youtube.com/channel/UCpxKdR3scZUtwjz_E-uIDyw';
+
   return (
     <div className='card-layout'>
       <div className='left-box'>
@@ -22,8 +25,20 @@ const Card = () => {
           <p>스터디 참여 누구보다 열심히 하겠습니다!</p>
         </div>
         <div className='button-box'>
-          <button>GitHub</button>
-          <button>YouTube</button>
+          <button
+            onClick={() => {
+              window.open(githubUrl);
+            }}
+          >
+            GitHub
+          </button>
+          <button
+            onClick={() => {
+              window.open(youtubeUrl);
+            }}
+          >
+            YouTube
+          </button>
         </div>
       </div>
     </div>
