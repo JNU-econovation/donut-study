@@ -6,6 +6,12 @@ const Card = () => {
   const githubUrl = 'https://github.com/Klomachenko';
   const youtubeUrl = 'https://www.youtube.com/channel/UCpxKdR3scZUtwjz_E-uIDyw';
 
+  const CARD_CONTENTS = [
+    'Econovation : 23th',
+    '제 카드를 보러 와주신 멘토님 환영하고 감사합니다!',
+    '스터디 참여 누구보다 열심히 하겠습니다!',
+  ];
+
   return (
     <div className='card-layout'>
       <div className='left-box'>
@@ -20,9 +26,9 @@ const Card = () => {
           </h1>
         </div>
         <div className='content-box'>
-          <p>Econovation : 23th</p>
-          <p>제 카드를 보러 와주신 멘토님 환영하고 감사합니다!</p>
-          <p>스터디 참여 누구보다 열심히 하겠습니다!</p>
+          {CARD_CONTENTS.map((content, index) => (
+            <p key={index}>{content}</p>
+          ))}
         </div>
         <div className='button-box'>
           <button
