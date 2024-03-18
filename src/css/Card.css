@@ -26,6 +26,7 @@ h1 {
 
 .left-box > img {
   width: 11.25rem;
+  max-width: 100%;
 }
 
 .right-box {
