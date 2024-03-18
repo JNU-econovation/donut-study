@@ -1,16 +1,11 @@
 import '@css/Card.css';
 import ProfileImage from '@image/ProfileImage.png';
 import { fontSize, fontWeight } from '../styles/theme';
+import { CARD_CONTENTS } from '../constants/CardData';
 
 const Card = () => {
   const githubUrl = 'https://github.com/Klomachenko';
   const youtubeUrl = 'https://www.youtube.com/channel/UCpxKdR3scZUtwjz_E-uIDyw';
-
-  const CARD_CONTENTS = [
-    'Econovation : 23th',
-    '제 카드를 보러 와주신 멘토님 환영하고 감사합니다!',
-    '스터디 참여 누구보다 열심히 하겠습니다!',
-  ];
 
   return (
     <div className='card-layout'>
