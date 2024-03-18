@@ -20,3 +20,9 @@ export const borderColor = {
   white: '#fff',
   green: '#1EB649',
 };
+
+export const fontWeight = {
+  normal: '400',
+  bold: '700',
+  heavy: '900',
+}
