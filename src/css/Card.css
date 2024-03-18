@@ -120,3 +120,24 @@ h1 {
     width: 100%;
   }
 }
+
+.card-layout.dark-mode {
+  background-color: #333;
+}
+
+.card-layout.dark-mode h1,
+.card-layout.dark-mode p,
+.card-layout.dark-mode .button-box > button {
+  color: white;
+}
+
+.card-layout.dark-mode .button-box > button {
+  background-color: #1eb649;
+  border: none;
+}
+
+.card-layout.dark-mode .button-box > button:hover {
+  background-color: white;
+  color: #1eb649;
+  border: 0.0625rem solid #1eb649;
+}
