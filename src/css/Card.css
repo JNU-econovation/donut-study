@@ -68,3 +68,43 @@ h1 {
   background-color: white;
   color: #1eb649;
 }
+
+@media (max-width: 486px) {
+  .card-layout {
+    width: 21.875rem;
+    height: 26.875rem;
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+
+  .left-box {
+    width: 100%;
+    height: 12.5rem;
+    background-color: antiquewhite;
+  }
+
+  .right-box {
+    width: 100%;
+    height: 14.375rem;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .content-box {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .button-box {
+    width: 15.125rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-box > button {
+    width: 100%;
+  }
+}
