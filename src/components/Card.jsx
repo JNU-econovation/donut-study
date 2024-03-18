@@ -1,6 +1,6 @@
 import '@css/Card.css';
 import ProfileImage from '@image/ProfileImage.png';
-import { color, fontSize, fontWeight } from '../styles/theme';
+import { fontSize, fontWeight } from '../styles/theme';
 
 const Card = () => {
   return (
@@ -22,12 +22,8 @@ const Card = () => {
           <p>스터디 참여 누구보다 열심히 하겠습니다!</p>
         </div>
         <div className='button-box'>
-          <button style={{ backgroundColor: color.green, color: color.white }}>
-            GitHub
-          </button>
-          <button style={{ backgroundColor: color.green, color: color.white }}>
-            YouTube
-          </button>
+          <button>GitHub</button>
+          <button>YouTube</button>
         </div>
       </div>
     </div>

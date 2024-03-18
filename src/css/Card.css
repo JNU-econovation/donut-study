@@ -50,8 +50,6 @@ h1 {
 .button-box {
   display: flex;
   gap: 0.25rem;
-  cursor: pointer;
-  transition: all 0.5s;
 }
 
 .button-box > button {
@@ -59,4 +57,14 @@ h1 {
   height: 32px;
   border: none;
   border-radius: 0.25rem;
+  background-color: #1eb649;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button-box > button:hover {
+  border: 0.0625rem solid #1eb649;
+  background-color: white;
+  color: #1eb649;
 }
