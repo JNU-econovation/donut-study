@@ -1,5 +1,5 @@
-- pr제목 : MISSION(주차)/(github id)
-  ex) MISSION1/geongyu09
+- pr제목 : MISSION(주차)/(이름)
+  ex) MISSION1/박건규
   (확인 후 지워주세요)
   
 ( ✅ 괄호의 내용을 올리기 전 모두 삭제해주세요!!! )
