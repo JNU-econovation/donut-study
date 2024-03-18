@@ -26,7 +26,20 @@ h1 {
 
 .left-box > img {
   width: 11.25rem;
+  border-radius: 50%;
   max-width: 100%;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem grey;
+}
+
+.left-box > img:hover {
+  animation: rotate_image 1s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .right-box {
