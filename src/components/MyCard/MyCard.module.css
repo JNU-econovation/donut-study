@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  gap: 3rem;
+  border: none;
+}
+
+.header {
+  font-size: x-large;
+}
+
+.image {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+}
+
+.content {
+  line-height: 2rem;
+}
+
+.content > h1 {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .image {
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content {
+    text-align: center;
+  }
+  .content > h1 {
+    margin-bottom: 1rem;
+  }
+}
