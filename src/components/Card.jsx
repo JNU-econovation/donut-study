@@ -16,10 +16,10 @@ const Card = () => {
 
   return (
     <div className={`card-layout ${darkMode ? 'dark-mode' : ''}`}>
-      <div className='left-box'>
+      <div className='left-box' tabIndex='0'>
         <img src={ProfileImage} alt='Profile Image' />
       </div>
-      <div className='right-box'>
+      <div className='right-box' tabIndex='1'>
         <div className='title-box'>
           <h1
             style={{
