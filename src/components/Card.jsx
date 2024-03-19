@@ -1,7 +1,9 @@
+import "./Card.css";
+import CardIntro from "./CardIntro";
 const Card = () => {
   return (
-    <div>
-      <h1>Econovation 26th</h1>
+    <div className="Card">
+      <CardIntro />
     </div>
   );
 };
