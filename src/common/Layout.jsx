@@ -1,6 +1,6 @@
 import { Header } from "./Header";
 
-export const LayOut = ({ children }) => {
+export const Layout = ({ children }) => {
   return (
     <>
       <Header />
