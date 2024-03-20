@@ -1,12 +1,15 @@
 import { Layout } from "../common/Layout";
 import { NameCard } from "../components/NameCard";
+import { Suspense } from "react";
 import "../style/Pages.style.css";
 
 export const NameCardPage = () => {
   return (
     <Layout>
       <div className="card-component-container">
-        <NameCard />
+        <Suspense fallback={<div>Loading...</div>}>
+          <NameCard />
+        </Suspense>
       </div>
     </Layout>
   );
