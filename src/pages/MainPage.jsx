@@ -1,7 +1,9 @@
 import styles from '@css/MainPage.module.css';
-import ProfileModal from '../components/block/ProfileModal';
 import StampModal from '../components/block/StampModal';
 import TabButton from '../components/atom/TabButton';
+import ProfileTabImg from '../assets/Images/ProfileTabImage.png';
+import StampTabImg from '../assets/Images/StampTabImage.png';
+import CouponTabImg from '../assets/Images/CouponTabImage.png';
 
 const MainPage = () => {
   const USER_NAME = '이규민';
@@ -15,9 +17,21 @@ const MainPage = () => {
           </p>
         </div>
         <div className={styles.buttonBox}>
-          <TabButton />
-          <TabButton />
-          <TabButton />
+          <TabButton
+            buttonText={'프로필'}
+            buttonImage={ProfileTabImg}
+            buttonInfo={'profile tab image'}
+          />
+          <TabButton
+            buttonText={'스탬프'}
+            buttonImage={StampTabImg}
+            buttonInfo={'stamp tab image'}
+          />
+          <TabButton
+            buttonText={'쿠폰'}
+            buttonImage={CouponTabImg}
+            buttonInfo={'coupon tab image'}
+          />
         </div>
         <div className={styles.modalBox}>
           {/* <ProfileModal /> */}
