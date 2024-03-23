@@ -1,10 +1,10 @@
 import './App.css';
-import Card from './components/Card';
+import DefaultButton from './components/atom/DefaultButton';
 
 function App() {
   return (
     <div>
-      <Card />
+      <DefaultButton />
     </div>
   );
 }
