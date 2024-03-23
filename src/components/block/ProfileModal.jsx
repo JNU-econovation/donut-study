@@ -24,8 +24,8 @@ const ProfileModal = () => {
           ))}
         </div>
         <div className={styles.buttonBox}>
-          <DefaultButton />
-          <DefaultButton />
+          <DefaultButton buttonText={'GitHub'} />
+          <DefaultButton buttonText={'YouTube'} />
         </div>
       </div>
     </div>

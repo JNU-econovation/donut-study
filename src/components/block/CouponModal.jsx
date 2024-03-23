@@ -7,7 +7,7 @@ const CouponModal = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.buttonBox}>
-          <DefaultButton />
+          <DefaultButton buttonText={'사용하기'} />
         </div>
         <div className={styles.contentBox}>
           <Coupon />

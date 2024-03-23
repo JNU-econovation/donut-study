@@ -7,7 +7,7 @@ const StampModal = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.buttonBox}>
-          <DefaultButton />
+          <DefaultButton buttonText={'적립하기'} />
         </div>
         <div className={styles.contentBox}>
           <Stamp />
