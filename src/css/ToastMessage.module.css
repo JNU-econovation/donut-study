@@ -1,0 +1,12 @@
+.container {
+  background-color: #fcfcfc;
+  color: black;
+  font-size: 0.75rem;
+  border: 0.0625rem solid black;
+  border-radius: 0.3125rem;
+  width: 15.125rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
