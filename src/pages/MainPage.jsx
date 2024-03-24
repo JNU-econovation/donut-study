@@ -11,13 +11,13 @@ import { useState } from 'react';
 const MainPage = () => {
   const USER_NAME = '이규민';
   const [activeModal, setActiveModal] = useState('profile');
+  const [stampNum, setStampNum] = useState(0);
+  const [couponNum, setCouponNum] = useState(0);
 
   const handleTabButtonClick = (modalType) => {
     setActiveModal(modalType);
     console.log(activeModal);
   };
-
-  const [stampNum, setStampNum] = useState(0);
 
   const handleSaveStamp = () => {
     setStampNum(stampNum + 1);
@@ -25,7 +25,17 @@ const MainPage = () => {
     if (stampNum === 10) {
       console.log('쿠폰이 발급되었습니다!');
       alert('쿠폰이 발급되었습니다!');
+      setCouponNum(couponNum + 1);
       setStampNum(0);
+    }
+  };
+
+  const handleUseCoupon = () => {
+    if (couponNum > 0) {
+      setCouponNum(couponNum - 1);
+      alert('쿠폰이 사용되었습니다!');
+    } else {
+      alert('사용가능한 쿠폰이 없습니다!');
     }
   };
 
@@ -62,7 +72,9 @@ const MainPage = () => {
           {activeModal === 'stamp' && (
             <StampModal buttonClick={handleSaveStamp} stampNum={stampNum} />
           )}
-          {activeModal === 'coupon' && <CouponModal />}
+          {activeModal === 'coupon' && (
+            <CouponModal buttonClick={handleUseCoupon} couponNum={couponNum} />
+          )}
         </div>
       </div>
     </div>
