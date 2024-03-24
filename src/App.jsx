@@ -1,10 +1,10 @@
 import './App.css';
-import DefaultButton from './components/atom/DefaultButton';
+import MainPage from './pages/MainPage';
 
 function App() {
   return (
-    <div>
-      <DefaultButton />
+    <div className='container'>
+      <MainPage />
     </div>
   );
 }
