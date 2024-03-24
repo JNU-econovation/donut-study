@@ -8,6 +8,13 @@ const ProfileModal = () => {
     '제 카드를 보러 와주신 멘토님 환영하고 감사합니다!',
     '스터디 참여 누구보다 열심히 하겠습니다!',
   ];
+  const URL = {
+    github: 'https://github.com/Klomachenko',
+    youtube: 'https://www.youtube.com/channel/UCpxKdR3scZUtwjz_E-uIDyw',
+  };
+  const linkClick = (link) => {
+    window.open(link);
+  };
 
   return (
     <div>
@@ -24,8 +31,14 @@ const ProfileModal = () => {
           ))}
         </div>
         <div className={styles.buttonBox}>
-          <DefaultButton buttonText={'GitHub'} />
-          <DefaultButton buttonText={'YouTube'} />
+          <DefaultButton
+            buttonText={'GitHub'}
+            onClick={() => linkClick(URL.github)}
+          />
+          <DefaultButton
+            buttonText={'YouTube'}
+            onClick={() => linkClick(URL.youtube)}
+          />
         </div>
       </div>
     </div>
