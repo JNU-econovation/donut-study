@@ -35,7 +35,7 @@ const MainPage = () => {
   const handleSaveStamp = () => {
     setStampNum(stampNum + 1);
     console.log(stampNum);
-    if (stampNum === 10) {
+    if (stampNum === 9) {
       setToast(true);
       setMessage('쿠폰이 발급되었습니다!');
       setCouponNum(couponNum + 1);
