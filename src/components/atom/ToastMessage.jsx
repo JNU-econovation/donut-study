@@ -1,10 +1,10 @@
 import styles from '@css/ToastMessage.module.css';
 
-const ToastMessage = () => {
+const ToastMessage = ({ message }) => {
   return (
     <div>
       <div className={styles.container}>
-        <p>토스트 메시지입니다!</p>
+        <p>{message}</p>
       </div>
     </div>
   );
