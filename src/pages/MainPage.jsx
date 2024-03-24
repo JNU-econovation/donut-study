@@ -14,6 +14,19 @@ const MainPage = () => {
 
   const handleTabButtonClick = (modalType) => {
     setActiveModal(modalType);
+    console.log(activeModal);
+  };
+
+  const [stampNum, setStampNum] = useState(0);
+
+  const handleSaveStamp = () => {
+    setStampNum(stampNum + 1);
+    console.log(stampNum);
+    if (stampNum === 10) {
+      console.log('쿠폰이 발급되었습니다!');
+      alert('쿠폰이 발급되었습니다!');
+      setStampNum(0);
+    }
   };
 
   return (
@@ -46,7 +59,9 @@ const MainPage = () => {
         </div>
         <div className={styles.modalBox}>
           {activeModal === 'profile' && <ProfileModal />}
-          {activeModal === 'stamp' && <StampModal />}
+          {activeModal === 'stamp' && (
+            <StampModal buttonClick={handleSaveStamp} stampNum={stampNum} />
+          )}
           {activeModal === 'coupon' && <CouponModal />}
         </div>
       </div>
