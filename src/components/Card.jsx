@@ -1,12 +1,10 @@
 import '@css/Card.css';
 import ProfileImage from '@image/ProfileImage.png';
 import { fontSize, fontWeight } from '../styles/theme';
-import { CARD_CONTENTS } from '../constants/CardData';
+import { CARD_CONTENTS, URL } from '../constants/CardData';
 import { useState } from 'react';
 
 const Card = () => {
-  const githubUrl = 'https://github.com/Klomachenko';
-  const youtubeUrl = 'https://www.youtube.com/channel/UCpxKdR3scZUtwjz_E-uIDyw';
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -38,14 +36,14 @@ const Card = () => {
         <div className='button-box'>
           <button
             onClick={() => {
-              window.open(githubUrl);
+              window.open(URL.github);
             }}
           >
             GitHub
           </button>
           <button
             onClick={() => {
-              window.open(youtubeUrl);
+              window.open(URL.youtube);
             }}
           >
             YouTube
