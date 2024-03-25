@@ -1,0 +1,38 @@
+.container {
+  box-sizing: border-box;
+  background-color: white;
+  border: 0.0625rem solid black;
+  border-radius: 0.625rem;
+  width: 17.8125rem;
+  height: 27.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
+  position: relative;
+}
+
+.buttonBox {
+  width: 17rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentBox {
+  width: 17rem;
+  height: 371px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: auto;
+  align-items: center;
+}
+
+.contentBox::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,49 @@
+.container {
+  box-sizing: border-box;
+  background-color: white;
+  border: 0.0625rem solid black;
+  border-radius: 0.625rem;
+  width: 17.8125rem;
+  height: 27.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1.25rem;
+}
+
+.imgBox {
+  width: 11.25rem;
+  height: 11.25rem;
+}
+
+.imgBox > img {
+  width: 100%;
+  height: 100%;
+}
+
+.titleBox {
+  margin-top: 1.75rem;
+}
+
+.titleBox > h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.contentBox {
+  font-size: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.contentBox > p {
+  margin: 0.25rem 0;
+  font-weight: 600;
+}
+
+.buttonBox {
+  margin-top: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

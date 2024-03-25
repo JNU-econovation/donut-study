@@ -1,0 +1,28 @@
+.button {
+  background-color: rgb(112, 19, 154);
+  color: white;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 1.25rem;
+  width: 4.25rem;
+  height: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.button > img {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.button:hover {
+  border: 0.0625rem solid white;
+}
+
+.button-clicked {
+  background-color: rgb(89, 13, 122);
+}

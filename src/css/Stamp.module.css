@@ -1,0 +1,20 @@
+.container {
+  background-color: white;
+  color: rgb(112, 19, 154);
+  font-size: 1.125rem;
+  border: 0.0625rem solid rgb(112, 19, 154);
+  border-radius: 0.3125rem;
+  width: 15.125rem;
+  height: 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container > img {
+  width: 1.75rem;
+  position: absolute;
+  left: 0.5rem;
+}
