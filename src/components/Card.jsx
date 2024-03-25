@@ -2,10 +2,15 @@ import '@css/Card.css';
 import ProfileImage from '@image/ProfileImage.png';
 import { fontSize, fontWeight } from '../styles/theme';
 import { CARD_CONTENTS, URL } from '../constants/CardData';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 
 const Card = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [imgError, setImgError] = useState(false);
+
+  const handleImgError = () => {
+    setImgError(true);
+  };
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -15,7 +20,15 @@ const Card = () => {
   return (
     <div className={`card-layout ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className='left-box' tabIndex='0'>
-        <img src={ProfileImage} alt='Profile Image' />
+        {imgError ? (
+          <div>Loading...</div>
+        ) : (
+          <img
+            src={ProfileImage}
+            alt='Profile Image'
+            onError={handleImgError}
+          />
+        )}
       </div>
       <div className='right-box' tabIndex='1'>
         <div className='title-box'>
