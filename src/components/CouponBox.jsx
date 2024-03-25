@@ -9,8 +9,7 @@ const CouponBox = ({ couponCount }) => {
   return (
     <>
       <CouponBlock>
-        {couponStamp}
-        <div> ☆ 10번 주문하시면 원하시는 커피를 제공해드립니다 ☆ </div>
+        <ButtonContainer>{couponStamp}</ButtonContainer>
       </CouponBlock>
     </>
   );
@@ -19,10 +18,19 @@ const CouponBox = ({ couponCount }) => {
 export default CouponBox;
 
 const CouponBlock = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 23.5rem;
+  height: 7rem;
   border: 1px solid black;
-  h4 {
-    text-align: center;
-  }
+  background-color: #9a3138;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
