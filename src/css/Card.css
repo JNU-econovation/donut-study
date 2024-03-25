@@ -1,0 +1,143 @@
+div {
+  box-sizing: border-box;
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+.card-layout {
+  width: 37.5rem;
+  height: 12.5rem;
+  padding: 0.5rem;
+  display: flex;
+  border: 0.25rem solid lightgreen;
+  border-radius: 0.5rem;
+}
+
+.left-box {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-box > img {
+  width: 11.25rem;
+  border-radius: 50%;
+  max-width: 100%;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem grey;
+}
+
+.left-box > img:hover {
+  animation: rotate_image 1s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.right-box {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.content-box > p {
+  font-size: 0.75rem;
+}
+
+.button-box {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.button-box > button {
+  width: 5rem;
+  height: 32px;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #1eb649;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button-box > button:hover {
+  border: 0.0625rem solid #1eb649;
+  background-color: white;
+  color: #1eb649;
+}
+
+@media (max-width: 486px) {
+  .card-layout {
+    width: 21.875rem;
+    height: 26.875rem;
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+
+  .left-box {
+    width: 100%;
+    height: 12.5rem;
+  }
+
+  .right-box {
+    width: 100%;
+    height: 14.375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .content-box {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .button-box {
+    width: 15.125rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-box > button {
+    width: 100%;
+  }
+}
+
+.card-layout.dark-mode {
+  background-color: #333;
+}
+
+.card-layout.dark-mode h1,
+.card-layout.dark-mode p,
+.card-layout.dark-mode .button-box > button {
+  color: white;
+}
+
+.card-layout.dark-mode .button-box > button {
+  background-color: #1eb649;
+  border: none;
+}
+
+.card-layout.dark-mode .button-box > button:hover {
+  background-color: white;
+  color: #1eb649;
+  border: 0.0625rem solid #1eb649;
+}
