@@ -15,7 +15,7 @@ const Card = () => {
   };
 
   return (
-    <div className={`card-layout ${darkMode ? 'dark-mode' : ''}`}>
+    <div className={`card-layout ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className='left-box' tabIndex='0'>
         <img src={ProfileImage} alt='Profile Image' />
       </div>
@@ -25,7 +25,6 @@ const Card = () => {
             style={{
               fontSize: fontSize.title,
               fontWeight: fontWeight.heavy,
-              color: darkMode ? 'white' : 'black',
             }}
           >
             Kyumin Lee
@@ -33,9 +32,7 @@ const Card = () => {
         </div>
         <div className='content-box'>
           {CARD_CONTENTS.map((content, index) => (
-            <p key={index} style={{ color: darkMode ? 'white' : 'black' }}>
-              {content}
-            </p>
+            <p key={index}>{content}</p>
           ))}
         </div>
         <div className='button-box'>
