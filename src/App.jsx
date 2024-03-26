@@ -40,9 +40,6 @@ function App() {
 export default App;
 
 const CouponContainer = styled.div`
-  border: 3px solid #9a3138;
-  border-radius: 20px;
-  width: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
