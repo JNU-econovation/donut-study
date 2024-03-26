@@ -3,8 +3,7 @@ import OrderBtn from "./components/OrderBtn";
 import SubmitBtn from "./components/SubmitBtn";
 import StampPaper from "./components/StampPaper";
 import StampHeader from "./components/StampHeader";
-
-export const MAX_ORDER_COUNT = 10;
+import { MAX_ORDER_COUNT } from "./constants/order";
 
 export default function App() {
   const [order, setOrder] = useState(0);
