@@ -1,8 +1,13 @@
 import styled from "styled-components";
-const Button = ({ text, onClick }) => {
+const Button = ({ text, onClick, color, fontColor }) => {
   return (
     <>
-      <button onClick={onClick}>{text}</button>
+      <button
+        style={{ backgroundColor: color, color: fontColor }}
+        onClick={onClick}
+      >
+        {text}
+      </button>
     </>
   );
 };

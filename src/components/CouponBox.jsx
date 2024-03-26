@@ -4,7 +4,9 @@ const CouponBox = ({ couponCount }) => {
   const couponStamp = [];
 
   for (let i = 0; i < couponCount; i++) {
-    couponStamp.push(<Button text={`${i + 1}`} />);
+    couponStamp.push(
+      <Button fontColor={"#9a3138"} color={"white"} text={`${i + 1}`} />
+    );
   }
   return (
     <>
