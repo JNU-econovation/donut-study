@@ -2,7 +2,7 @@ import Stamp from "./Stamp";
 
 export default function StampPaper({ order }) {
   return (
-    <div className="text-start mx-auto bg-slate-50 w-[690px]">
+    <div className="text-start mx-auto border-r border-t w-[690px] overflow-hidden">
       {Array.from({ length: order }).map((_, index) => (
         <Stamp key={index} isChecked={false} />
       ))}
