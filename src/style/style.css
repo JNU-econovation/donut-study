@@ -1,0 +1,19 @@
+.container{
+   border: 5px solid darkgreen;
+   border-radius: 30px;
+   width: 450px;
+   display: flex;
+   align-items: center;
+   padding: 20px;
+   background-color: hotpink;
+   gap: 20px;
+}
+
+.selfie{
+
+    border: solid darkgreen 5px;
+    width: 120px;
+    height: 90px;
+    border-radius: 50%;
+
+}   
