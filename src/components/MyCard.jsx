@@ -1,5 +1,5 @@
 import { getImgUrlBy } from "../hooks/Util";
-export const NameCard = () => {
+export const MyCard = () => {
 	const cardImg = "cardImg.jpg";
 	const CARD_TITLE = "25기 김동완";
 	const CARD_CONTENTS = [

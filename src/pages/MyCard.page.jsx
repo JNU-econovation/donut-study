@@ -1,8 +1,8 @@
 import { Layout } from "../common/Layout";
-import { NameCard } from "../components/NameCard";
+import { NameCard } from "../components/MyCard";
 import "./Pages.style.scss";
 
-export const NameCardPage = () => {
+export const MyCardPage = () => {
 	return (
 		<Layout>
 			<div className="card-component-container">
