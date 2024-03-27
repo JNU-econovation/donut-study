@@ -1,0 +1,25 @@
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.coupon-event-container {
+	@include flexCenter;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.coupon-event-title {
+	font-size: 3rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.coupon-event-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
