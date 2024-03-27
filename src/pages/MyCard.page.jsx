@@ -1,12 +1,12 @@
 import { Layout } from "../common/Layout";
-import { NameCard } from "../components/MyCard";
+import { MyCard } from "../components/MyCard";
 import "./Pages.style.scss";
 
 export const MyCardPage = () => {
 	return (
 		<Layout>
 			<div className="card-component-container">
-				<NameCard />
+				<MyCard />
 			</div>
 		</Layout>
 	);
