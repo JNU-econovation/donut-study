@@ -1,0 +1,51 @@
+@mixin font-color {
+	&red {
+		color: rgb(255, 100, 100);
+	}
+
+	&blue {
+		color: rgb(100, 150, 255);
+	}
+}
+
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin button-color {
+	&red {
+		background-color: rgb(255, 100, 100);
+		color: white;
+	}
+
+	&blue {
+		background-color: rgb(100, 150, 255);
+		color: white;
+	}
+}
+
+.text-small {
+	font-size: 1.5rem;
+}
+
+.text-medium {
+	font-size: 2rem;
+}
+
+.text-large {
+	font-size: 3rem;
+}
+
+.button {
+	@include flexCenter;
+	font-size: 1.5rem;
+	background-color: rgb(100, 150, 255);
+	color: white;
+	border: none;
+	margin: 1rem 0 1rem 0;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
