@@ -5,15 +5,15 @@ import StampPaper from "./components/StampPaper";
 import { MAX_ORDER_COUNT } from "./constants/order";
 
 export default function App() {
-  const [order, setOrder] = useState(0);
+  const [orderCount, setOrderCount] = useState(0);
 
   const submitCupon = () => {
-    if (order < MAX_ORDER_COUNT) return;
+    if (orderCount < MAX_ORDER_COUNT) return;
     alert("와우! 하나가 공짜?????");
-    setOrder(0);
+    setOrderCount(0);
   };
 
-  const orderCoffee = () => setOrder((prev) => ++prev);
+  const orderCoffee = () => setOrderCount((prev) => ++prev);
 
   return (
     <div className="text-center">
@@ -22,9 +22,9 @@ export default function App() {
         쿠폰을 받아보세요! 주문할 때마다 쿠폰을 받을 수 있어요! 10개를 모으면
         무려 1개가 공짜??
       </p>
-      <OrderBtn orderCount={order} increaseOrderCount={orderCoffee} />
-      <StampPaper orderCount={order} />
-      <SubmitBtn submitCupon={submitCupon} orderCount={order} />
+      <OrderBtn orderCount={orderCount} increaseOrderCount={orderCoffee} />
+      <StampPaper orderCount={orderCount} />
+      <SubmitBtn submitCupon={submitCupon} orderCount={orderCount} />
     </div>
   );
 }
