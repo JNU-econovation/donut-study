@@ -1,15 +1,14 @@
 import { useCoupon } from "../hooks/useCoupon";
-import { TextSmall, TextMedium, TextLarge } from "../common/Text";
 import { Button } from "../common/Button";
-import "./CouponEvent.style.scss";
+import "./style/CouponEvent.style.scss";
 
 export const CouponEvent = () => {
 	const { coupon, isCouponFull, getCoupon, orderByCoupon } = useCoupon();
 	return (
 		<div className="coupon-event-container">
-			<TextLarge className="coupon-event-title">쿠폰 이벤트</TextLarge>
-			<TextMedium className="coupon-event-subtitle">쿠폰을 받아보세요! 10개를 모으면 커피를 드립니다.</TextMedium>
-			<TextSmall className="coupon-event-subtitle">현재 쿠폰 개수: {coupon}</TextSmall>
+			<p className="coupon-event-title">쿠폰 이벤트</p>
+			<p className="coupon-event-subtitle">쿠폰을 받아보세요! 10개를 모으면 커피를 드립니다.</p>
+			<p className="coupon-event-subtitle">현재 쿠폰 개수: {coupon}</p>
 			<Button className="order-button" onClick={getCoupon}>
 				쿠폰 받기
 			</Button>
