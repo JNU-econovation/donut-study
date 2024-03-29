@@ -20,7 +20,7 @@ export default function App() {
     <div className="text-center">
       <StampHeader />
       <OrderBtn orderCount={order} handler={orderCoffee} />
-      <StampPaper order={order} />
+      <StampPaper orderCount={order} />
       <SubmitBtn handler={submitCupon} orderCount={order} />
     </div>
   );
