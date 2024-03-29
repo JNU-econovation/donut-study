@@ -1,5 +1,5 @@
-import stamp from "/src/assets/stamp.png";
-import checkedStamp from "/src/assets/complete-stamp.png";
+import stamp from "../../../../../../../src/assets/stamp.png";
+import checkedStamp from "../../../../../../../src/assets/complete-stamp.png";
 
 export default function Stamp({ isChecked }) {
   return (
