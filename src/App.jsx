@@ -19,7 +19,7 @@ export default function App() {
   return (
     <div className="text-center">
       <StampHeader />
-      <OrderBtn orderCount={order} handler={orderCoffee} />
+      <OrderBtn orderCount={order} increaseOrderCount={orderCoffee} />
       <StampPaper orderCount={order} />
       <SubmitBtn handler={submitCupon} orderCount={order} />
     </div>
