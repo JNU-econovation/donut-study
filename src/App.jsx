@@ -21,7 +21,7 @@ export default function App() {
       <StampHeader />
       <OrderBtn orderCount={order} increaseOrderCount={orderCoffee} />
       <StampPaper orderCount={order} />
-      <SubmitBtn handler={submitCupon} orderCount={order} />
+      <SubmitBtn submitCupon={submitCupon} orderCount={order} />
     </div>
   );
 }
