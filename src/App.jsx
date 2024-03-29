@@ -13,7 +13,7 @@ export default function App() {
     setOrderCount(0);
   };
 
-  const orderCoffee = () => setOrderCount((prev) => ++prev);
+  const orderCoffee = () => setOrderCount((prev) => prev + 1);
 
   return (
     <div className="text-center">
