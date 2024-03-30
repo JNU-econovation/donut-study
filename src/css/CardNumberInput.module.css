@@ -1,0 +1,25 @@
+.container {
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid black;
+  width: 48.75rem;
+  height: 5rem;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.container > p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
