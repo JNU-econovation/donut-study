@@ -35,6 +35,13 @@ try {
               emoji: true,
             },
           },
+           {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `${github.context.payload.pull_request.title}`,
+            },
+          },
           {
             type: "section",
             fields: [
@@ -86,7 +93,8 @@ try {
       },
     );
   };
-  send();
+  if (github.context.payload.pull_request.requested_reviewers.length > 0)
+    send();
 } catch (error) {
   core.setFailed(error.message);
 }
