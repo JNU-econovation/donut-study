@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.noticeBox {
+  width: 48.75rem;
+  height: 3rem;
+  border-radius: 0.3125rem 0.3125rem 0 0;
+  background-color: #7f8695;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noticeBox > p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.flexBox {
+  display: flex;
+}
