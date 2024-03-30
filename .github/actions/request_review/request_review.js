@@ -42,7 +42,7 @@ try {
                 text: `<@${
                   USERS.find(user => user.githubID === github.context.payload.sender.id)
                     ?.slackID
-                }>님이 MR을 보냈습니다!`
+                }>님이 PR을 보냈습니다!`
               },
               {
                 type: "mrkdwn",
@@ -55,7 +55,7 @@ try {
                     return slackID ? `<@${slackID}>` : undefined;
                   })
                   .filter(Boolean)
-                  .join(" ")}님 리뷰해주세요!`
+                  .join(" ")}님 리뷰를 부탁해요!`
               }
             ]
           },
