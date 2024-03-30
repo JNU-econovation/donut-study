@@ -1,5 +1,7 @@
 import core from "@actions/core" ;
 import { IncomingWebhook } from "@slack/webhook";
+import github from "@actions/github";
+
 
 const USERS = [
   {name:'김동완', slackID:"U06MGJUV5T6", githubID:77495584},
