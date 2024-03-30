@@ -1,0 +1,10 @@
+name: "request-review"
+description: "Request a review from a specific user on a pull request"
+
+inputs:
+  slack_url:
+    required: true
+
+runs:
+  using: "node20"
+  main: "request_review.js"
