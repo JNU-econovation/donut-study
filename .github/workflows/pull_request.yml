@@ -1,0 +1,26 @@
+on:
+  pull_request:
+
+jobs:
+  request_review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Cache node modules
+        uses: actions/cache@v4
+        id: cache
+        with:
+          path: node_modules
+          key: npm-packages-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Start PR actions
+        id: PRAction
+        uses: ./.github/actions/request_review
+        with:
+          slack_url: ${{ secrets.SLACK_WEBHOOK_URL }}
