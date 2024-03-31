@@ -7,7 +7,7 @@ export default function RegisteredCards({ registeredCards }) {
         <CardList
           key={`${index}`}
           cardName={cardName}
-          cardNumber={cardNumber.firstCardNumber}
+          cardNumber={cardNumber}
         />
       ))}
     </ul>

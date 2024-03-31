@@ -1,6 +1,6 @@
 .listImage {
-  width: 3rem;
-  height: 3rem;
+  width: 9rem;
+  height: 5rem;
   border-radius: 1rem;
-  background-color: aqua;
+  background-color: rgb(248 250 252);
 }
