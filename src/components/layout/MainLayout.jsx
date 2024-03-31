@@ -5,8 +5,9 @@ import CardNumberInput from '../block/CardNumberInput';
 import CardPwInput from '../block/CardPwInput';
 import CvcInput from '../block/CvcInput';
 import ExpirationDateInput from '../block/ExpirationDateInput';
+import DefaultButton from '../atom/DefaultButton';
 
-const MainLayout = () => {
+const MainLayout = ({ onButtonClick }) => {
   const [cardInfo, setCardInfo] = useState({
     cardName: '',
     cardNumber: '',
@@ -55,7 +56,7 @@ const MainLayout = () => {
   };
 
   const handleButtonClick = () => {
-    console.log(cardInfo);
+    onButtonClick(cardInfo);
   };
 
   return (
@@ -70,7 +71,7 @@ const MainLayout = () => {
         <CvcInput onChange={handleCvcChange} />
       </div>
       <CardPwInput onChange={handleCardPwChange} />
-      <button onClick={handleButtonClick}>임시</button>
+      <DefaultButton onClick={handleButtonClick} buttonText='등록하기' />
     </div>
   );
 };
