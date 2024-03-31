@@ -1,7 +1,7 @@
-import "./App.css";
+import AddCardPage from "./pages/AddCardPage";
 
 function App() {
-  return <main></main>;
+  return <AddCardPage />;
 }
 
 export default App;

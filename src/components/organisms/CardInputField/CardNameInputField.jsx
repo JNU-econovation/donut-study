@@ -1,12 +1,15 @@
+import { useId } from "react";
 import InputField from "../../molecules/InputFIeld/InputField";
 
 export default function CardNameInputField({
   cardNameChangeHandler,
   cardName,
 }) {
+  const id = useId();
+
   return (
     <InputField
-      id="cardName"
+      id={id}
       inputLabel="카드 이름"
       inputType="text"
       placeholder="카드 이름을 입력해주세요"

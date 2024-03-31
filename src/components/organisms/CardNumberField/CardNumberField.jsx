@@ -15,8 +15,8 @@ export default function CardNumberField({
           inputType="number"
           placeholder="0000"
           value={cardNumber.firstCardNumber}
-          onChange={(e) => {
-            cardNumberChangeHandler(e.target.value, "firstCardNumber");
+          onChange={(number) => {
+            cardNumberChangeHandler(number, "firstCardNumber");
           }}
         />
         _
@@ -25,8 +25,8 @@ export default function CardNumberField({
           inputType="number"
           placeholder="0000"
           value={cardNumber.secondCardNumber}
-          onChange={(e) => {
-            cardNumberChangeHandler(e.target.value, "secondCardNumber");
+          onChange={(number) => {
+            cardNumberChangeHandler(number, "secondCardNumber");
           }}
         />
         _
@@ -35,8 +35,8 @@ export default function CardNumberField({
           inputType="password"
           placeholder="****"
           value={cardNumber.thirdCardNumber}
-          onChange={(e) => {
-            cardNumberChangeHandler(e.target.value, "thirdCardNumber");
+          onChange={(number) => {
+            cardNumberChangeHandler(number, "thirdCardNumber");
           }}
         />
         _
@@ -45,8 +45,8 @@ export default function CardNumberField({
           inputType="password"
           placeholder="****"
           value={cardNumber.fourthCardNumber}
-          onChange={(e) => {
-            cardNumberChangeHandler(e.target.value, "fourthCardNumber");
+          onChange={(number) => {
+            cardNumberChangeHandler(number, "fourthCardNumber");
           }}
         />
       </div>

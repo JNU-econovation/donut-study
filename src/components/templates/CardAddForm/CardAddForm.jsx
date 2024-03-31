@@ -15,6 +15,7 @@ export default function CardAddForm({
   cardPasswordChangeHandler,
   addCard,
 }) {
+  console.log("cardNumber : " + JSON.stringify(cardFormData.cardNumber));
   return (
     <form className={styles.CardForm} onSubmit={addCard}>
       <div className={styles.formHeader}>카드 정보를 입력해주세요</div>
