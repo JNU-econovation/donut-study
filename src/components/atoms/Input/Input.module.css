@@ -1,0 +1,11 @@
+.input {
+  width: 100%;
+  margin-top: 0.5rem;
+  outline: 2px solid transparent;
+  border: 0;
+  outline-offset: 2px;
+  background-color: inherit;
+  &:focus {
+    border-bottom: 2px solid rgb(129, 140, 248);
+  }
+}
