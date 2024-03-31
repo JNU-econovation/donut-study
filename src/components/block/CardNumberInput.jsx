@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from '../../css/CardNumberInput.module.css';
 import DefaultInput from '../atom/DefaultInput';
 
-const CardNumberInput = () => {
+const CardNumberInput = ({ onChange, value }) => {
   const [eachNumber, setEachNumber] = useState({
     firstNumb: '',
     secondNumb: '',
@@ -10,22 +10,53 @@ const CardNumberInput = () => {
     fourthNumb: '',
   });
 
-  const [cardNumber, setCardNumber] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setEachNumber((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    console.log(e.target.value);
+  const numberCahnge = () => {
+    const cardNumber =
+      eachNumber.firstNumb +
+      '-' +
+      eachNumber.secondNumb +
+      '-' +
+      eachNumber.thirdNumb +
+      '-' +
+      eachNumber.fourthNumb;
+    onChange(cardNumber);
   };
 
-  const combinedCardNumber = Object.values(eachNumber).join(' ');
+  const firstNumberChange = (e) => {
+    const first = e.target.value;
+    setEachNumber((prevNumber) => ({
+      ...prevNumber,
+      firstNumb: first,
+    }));
+    numberCahnge();
+  };
 
-  useEffect(() => {
-    setCardNumber(combinedCardNumber);
-  }, [eachNumber]);
+  const secondNumberChange = (e) => {
+    const second = e.target.value;
+    setEachNumber((prevNumber) => ({
+      ...prevNumber,
+      secondNumb: second,
+    }));
+    numberCahnge();
+  };
+
+  const thirdNumberChange = (e) => {
+    const third = e.target.value;
+    setEachNumber((prevNumber) => ({
+      ...prevNumber,
+      thirdNumb: third,
+    }));
+    numberCahnge();
+  };
+
+  const fourthNumberChange = (e) => {
+    const fourth = e.target.value;
+    setEachNumber((prevNumber) => ({
+      ...prevNumber,
+      fourthNumb: fourth,
+    }));
+    numberCahnge();
+  };
 
   return (
     <div className={styles.container}>
@@ -33,32 +64,32 @@ const CardNumberInput = () => {
       <div className={styles.inputContainer}>
         <DefaultInput
           placeholder={'0 0 0 0'}
-          onChange={handleChange}
-          value={setEachNumber.firstNumb}
+          onChange={firstNumberChange}
+          value={value}
           type='text'
           maxLength='4'
         />
         <span>-</span>
         <DefaultInput
           placeholder={'0 0 0 0'}
-          onChange={handleChange}
-          value={setEachNumber.secondNumb}
+          onChange={secondNumberChange}
+          value={value}
           type='text'
           maxLength='4'
         />
         <span>-</span>
         <DefaultInput
           placeholder={'0 0 0 0'}
-          onChange={handleChange}
-          value={setEachNumber.thirdNumb}
+          onChange={thirdNumberChange}
+          value={value}
           type='text'
           maxLength='4'
         />
         <span>-</span>
         <DefaultInput
           placeholder={'0 0 0 0'}
-          onChange={handleChange}
-          value={setEachNumber.fourthNumb}
+          onChange={fourthNumberChange}
+          value={value}
           type='text'
           maxLength='4'
         />

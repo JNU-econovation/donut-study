@@ -1,22 +1,14 @@
-import { useState } from 'react';
 import styles from '../../css/CvcInput.module.css';
 import DefaultInput from '../atom/DefaultInput';
 
-const CvcInput = () => {
-  const [cvcNumb, setCvcNumb] = useState('');
-
-  const handleChange = (e) => {
-    setCvcNumb(e.target.value);
-    console.log(e.target.value);
-  };
-
+const CvcInput = ({ onChange, value }) => {
   return (
     <div className={styles.container}>
       <p>CVC</p>
       <DefaultInput
         placeholder={'카드 뒷면 3자리 숫자'}
-        onChange={handleChange}
-        value={cvcNumb}
+        onChange={onChange}
+        value={value}
         type='text'
         maxLength='3'
       />
