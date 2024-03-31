@@ -1,0 +1,16 @@
+.CardForm {
+  max-width: 48rem;
+  margin-inline: auto;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  .formHeader {
+    background-color: #8991a0;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .formDivition {
+    display: flex;
+  }
+}
