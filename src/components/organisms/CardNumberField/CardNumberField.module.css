@@ -1,0 +1,11 @@
+.CardNumberField {
+  background-color: white;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 1rem;
+  .fieldDivition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
