@@ -1,7 +1,7 @@
 .image {
-  border-radius: 70%;
+  border-radius: 99999px;
   width: 12rem;
-  height: 13rem;
+  height: 12rem;
   margin-right: 2.5rem;
   margin-top: 0.1rem;
 }
