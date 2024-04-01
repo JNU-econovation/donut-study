@@ -1,15 +1,14 @@
 import { Layout } from "../common/Layout";
 import { NameCard } from "../components/NameCard";
-import "../style/Pages.style.css";
 
 export const NameCardPage = () => {
-  return (
-    <Layout>
-      <div className="card-component-container">
-        <NameCard />
-      </div>
-    </Layout>
-  );
+	return (
+		<Layout>
+			<div className="card-component-container">
+				<NameCard />
+			</div>
+		</Layout>
+	);
 };
 
 //작은 미션이지만 페이지와 컴포넌트 분리 이유
