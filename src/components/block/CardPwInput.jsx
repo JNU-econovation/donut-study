@@ -1,4 +1,4 @@
-import styles from '../../css/CardNameInput.module.css';
+import styles from '../../css/CardPwInput.module.css';
 import DefaultInput from '../atom/DefaultInput';
 
 const CardPwInput = ({ onChange, value }) => {

@@ -10,7 +10,7 @@ const CardNumberInput = ({ onChange, value }) => {
     fourthNumb: '',
   });
 
-  const numberCahnge = () => {
+  const numberChange = () => {
     const cardNumber =
       eachNumber.firstNumb +
       '-' +
@@ -28,7 +28,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       firstNumb: first,
     }));
-    numberCahnge();
+    numberChange();
   };
 
   const secondNumberChange = (e) => {
@@ -37,7 +37,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       secondNumb: second,
     }));
-    numberCahnge();
+    numberChange();
   };
 
   const thirdNumberChange = (e) => {
@@ -46,7 +46,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       thirdNumb: third,
     }));
-    numberCahnge();
+    numberChange();
   };
 
   const fourthNumberChange = (e) => {
@@ -55,7 +55,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       fourthNumb: fourth,
     }));
-    numberCahnge();
+    numberChange();
   };
 
   return (

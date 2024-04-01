@@ -1,7 +1,7 @@
 .container {
   box-sizing: border-box;
   background-color: white;
-  border: 1px solid black;
+  border-bottom: 1px solid #7f8695;
   width: 48.75rem;
   height: 5rem;
   padding: 0 1.25rem;
