@@ -15,31 +15,32 @@ export default function CardAddForm({
   cardPasswordChangeHandler,
   addCard,
 }) {
-  console.log("cardNumber : " + JSON.stringify(cardFormData.cardNumber));
+  const { cardName, cardCVC, cardMMYY, cardNumber, cardPassword } =
+    cardFormData;
   return (
     <form className={styles.CardForm} onSubmit={addCard}>
       <div className={styles.formHeader}>카드 정보를 입력해주세요</div>
       <CardNameInputField
         cardNameChangeHandler={cardNameChangeHandler}
-        cardName={cardFormData.cardName}
+        cardName={cardName}
       />
       <CardNumberField
-        cardNumber={cardFormData.cardNumber}
+        cardNumber={cardNumber}
         cardNumberChangeHandler={cardNumberChangeHandler}
       />
       <div className={styles.formDivition}>
         <CardMMYYField
           cardMMYYChangeHandler={cardMMYYChangeHandler}
-          cardMMYY={cardFormData.cardMMYY}
+          cardMMYY={cardMMYY}
         />
         <CardCVCField
           cardCVCChangeHandler={cardCVCChangeHandler}
-          cardCVC={cardFormData.cardCVC}
+          cardCVC={cardCVC}
         />
       </div>
       <CardPasswordField
         cardPasswordChangeHandler={cardPasswordChangeHandler}
-        cardPassword={cardFormData.cardPassword}
+        cardPassword={cardPassword}
       />
       <CardSubmitButton />
     </form>
