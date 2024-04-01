@@ -1,0 +1,49 @@
+.card-container {
+	border: 1px solid #cdcdcd;
+	border-radius: 15px;
+	label {
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+}
+
+.card-notice {
+	text-align: center;
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	background-color: gray;
+	color: white;
+	border-radius: 15px 15px 0 0;
+}
+
+.card-input-container {
+	input {
+		border: none;
+		border-bottom: 1px solid #cdcdcd;
+		font-size: 1.2rem;
+	}
+}
+
+.card-input-container {
+	display: flex;
+	flex-direction: row;
+	input {
+		width: 100%;
+		padding: 0.5rem;
+		border: none;
+		border-bottom: 1px solid #cdcdcd;
+		font-size: 1.2rem;
+		margin: 0.5rem;
+	}
+}
+
+.card-number-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.card-date-cvc-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
