@@ -2,10 +2,13 @@ import styles from '../css/MainPage.module.css';
 import MainLayout from '../components/layout/MainLayout';
 import { useState } from 'react';
 import CardListModal from '../components/block/CardListModal';
+import useRemove from '../hooks/useRemove';
 
 const MainPage = () => {
   const [cardList, setCardList] = useState([]);
   const [nextId, setNextId] = useState(1);
+
+  const removeCard = useRemove(cardList, setCardList);
 
   const handleButtonClick = (cardInfo) => {
     const newCard = { ...cardInfo, id: nextId };
@@ -14,8 +17,7 @@ const MainPage = () => {
   };
 
   const handleRemoveButtonClick = (targetId) => {
-    const updatedCardList = cardList.filter((card) => card.id !== targetId);
-    setCardList(updatedCardList);
+    removeCard(targetId);
   };
 
   return (

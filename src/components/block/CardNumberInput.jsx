@@ -16,7 +16,7 @@ const CardNumberInput = ({ onChange, value }) => {
     third = eachNumber.thirdNumb,
     fourth = eachNumber.fourthNumb,
   }) => {
-    const cardNumber = first + '-' + second + '-' + third + '-' + fourth;
+    const cardNumber = first + '-' + second + '-' + '****' + '-' + '****';
     onChange(cardNumber);
   };
 
@@ -80,7 +80,7 @@ const CardNumberInput = ({ onChange, value }) => {
           placeholder={'0 0 0 0'}
           onChange={thirdNumberChange}
           value={value}
-          type='text'
+          type='password'
           maxLength='4'
         />
         <span>-</span>
@@ -88,7 +88,7 @@ const CardNumberInput = ({ onChange, value }) => {
           placeholder={'0 0 0 0'}
           onChange={fourthNumberChange}
           value={value}
-          type='text'
+          type='password'
           maxLength='4'
         />
       </div>
