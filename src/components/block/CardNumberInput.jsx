@@ -10,15 +10,13 @@ const CardNumberInput = ({ onChange, value }) => {
     fourthNumb: '',
   });
 
-  const numberChange = () => {
-    const cardNumber =
-      eachNumber.firstNumb +
-      '-' +
-      eachNumber.secondNumb +
-      '-' +
-      eachNumber.thirdNumb +
-      '-' +
-      eachNumber.fourthNumb;
+  const numberChange = ({
+    first = eachNumber.firstNumb,
+    second = eachNumber.secondNumb,
+    third = eachNumber.thirdNumb,
+    fourth = eachNumber.fourthNumb,
+  }) => {
+    const cardNumber = first + '-' + second + '-' + third + '-' + fourth;
     onChange(cardNumber);
   };
 
@@ -28,7 +26,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       firstNumb: first,
     }));
-    numberChange();
+    numberChange({ first }); // 비동기적으로 실행되므로 setEachNumber가 그래서 numberChange가 먼저 실행 완료가 되어서 그럼
   };
 
   const secondNumberChange = (e) => {
@@ -37,7 +35,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       secondNumb: second,
     }));
-    numberChange();
+    numberChange({ second });
   };
 
   const thirdNumberChange = (e) => {
@@ -46,7 +44,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       thirdNumb: third,
     }));
-    numberChange();
+    numberChange({ third });
   };
 
   const fourthNumberChange = (e) => {
@@ -55,7 +53,7 @@ const CardNumberInput = ({ onChange, value }) => {
       ...prevNumber,
       fourthNumb: fourth,
     }));
-    numberChange();
+    numberChange({ fourth });
   };
 
   return (
