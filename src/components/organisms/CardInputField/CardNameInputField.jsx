@@ -1,4 +1,3 @@
-import { useId } from "react";
 import InputField from "../../molecules/InputFIeld/InputField";
 
 export default function CardNameInputField({
