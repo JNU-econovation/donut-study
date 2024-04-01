@@ -19,5 +19,3 @@ export const CouponEvent = () => {
 		</div>
 	);
 };
-
-//상태가 많으면 안되는 이유
