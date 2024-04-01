@@ -3,7 +3,7 @@ import MainLayout from '../components/layout/MainLayout';
 import { useState } from 'react';
 import CardListModal from '../components/block/CardListModal';
 import useRemove from '../hooks/useRemove';
-import { cardNameCheck } from '../\butils/validation';
+import { cardNameCheck } from '../utils/validation';
 
 const MainPage = () => {
   const [cardList, setCardList] = useState([]);
@@ -19,7 +19,9 @@ const MainPage = () => {
       setCardList((prevCardList) => [...prevCardList, newCard]);
       setNextId(nextId + 1);
     } else {
-      alert('카드이름을 입력해주세요');
+      alert(
+        '카드이름을 입력해주세요. 공백을 포함하지 않고, 특수문자가 없어야 합니다!'
+      );
       setCardList(false);
       setCardList(cardList);
     }
