@@ -3,17 +3,26 @@ import MainLayout from '../components/layout/MainLayout';
 import { useState } from 'react';
 import CardListModal from '../components/block/CardListModal';
 import useRemove from '../hooks/useRemove';
+import { cardNameCheck } from '../\butils/validation';
 
 const MainPage = () => {
   const [cardList, setCardList] = useState([]);
   const [nextId, setNextId] = useState(1);
+  const [cardNameValid, setCardNameValid] = useState(false);
 
   const removeCard = useRemove(cardList, setCardList);
 
   const handleButtonClick = (cardInfo) => {
-    const newCard = { ...cardInfo, id: nextId };
-    setCardList((prevCardList) => [...prevCardList, newCard]);
-    setNextId(nextId + 1);
+    if (cardNameCheck(cardInfo.cardName)) {
+      setCardNameValid(true);
+      const newCard = { ...cardInfo, id: nextId };
+      setCardList((prevCardList) => [...prevCardList, newCard]);
+      setNextId(nextId + 1);
+    } else {
+      alert('카드이름을 입력해주세요');
+      setCardList(false);
+      setCardList(cardList);
+    }
   };
 
   const handleRemoveButtonClick = (targetId) => {
@@ -22,7 +31,10 @@ const MainPage = () => {
 
   return (
     <div className={styles.container}>
-      <MainLayout onButtonClick={handleButtonClick} />
+      <MainLayout
+        onButtonClick={handleButtonClick}
+        cardNameValid={cardNameValid}
+      />
       {cardList.map((cardInfo, index) => (
         <CardListModal
           key={index}
