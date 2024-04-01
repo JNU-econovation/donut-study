@@ -1,3 +1,3 @@
 export const getImgUrlBy = (imgName) => {
-  return `src/img/${imgName}`;
+	return `src/img/${imgName}`;
 };
