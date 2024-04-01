@@ -1,9 +1,13 @@
 import styles from '../../css/CardListModal.module.css';
 import cardImage from '../../assets/Image/CardImage.png';
+import CardButton from '../atom/CardButton';
 
-const CardListModal = ({ info }) => {
-  console.log(info);
-  const cardInfo = info;
+const CardListModal = ({ info, onRemoveButtonClick }) => {
+  const { id, cardName, cardNumber } = info;
+
+  const handleButtonClick = () => {
+    onRemoveButtonClick(id);
+  };
 
   return (
     <div className={styles.container}>
@@ -11,9 +15,10 @@ const CardListModal = ({ info }) => {
         <img src={cardImage} alt='카드 이미지입니다' />
       </div>
       <div className={styles.contentBox}>
-        <h4>카드명 : {cardInfo.cardName}</h4>
-        <p>CardNumber : {cardInfo.cardNumber}</p>
+        <h4>카드명 : {cardName}</h4>
+        <p>CardNumber : {cardNumber}</p>
       </div>
+      <CardButton buttonText='삭제' onClick={handleButtonClick} />
     </div>
   );
 };

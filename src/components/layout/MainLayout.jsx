@@ -15,6 +15,7 @@ const MainLayout = ({ onButtonClick }) => {
     cvcNumber: '',
     cardPassWord: '',
   });
+  const [disabled, setDisabled] = useState(true);
 
   const handleNameChange = (e) => {
     const name = e.target.value;
