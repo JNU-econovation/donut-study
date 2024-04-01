@@ -6,7 +6,6 @@ export default function CardMMYYField({ cardMMYYChangeHandler, cardMMYY }) {
       inputLabel="만료일"
       inputType="text"
       placeholder="MM / YY"
-      id="mmyy"
       onChange={cardMMYYChangeHandler}
       value={cardMMYY}
     />

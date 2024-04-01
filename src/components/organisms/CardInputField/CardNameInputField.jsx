@@ -5,11 +5,8 @@ export default function CardNameInputField({
   cardNameChangeHandler,
   cardName,
 }) {
-  const id = useId();
-
   return (
     <InputField
-      id={id}
       inputLabel="카드 이름"
       inputType="text"
       placeholder="카드 이름을 입력해주세요"
