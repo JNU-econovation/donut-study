@@ -1,0 +1,69 @@
+import { CreditCardInput } from "./CreditCardInput";
+import { Button } from "../common/Button";
+import { useCardForm } from "../hooks/useCardForm";
+import "./style/CreditCard.style.scss";
+
+export const CreditCard = () => {
+	const { state, submitCardForm, setCardOwner, setCardNumber, setCardDate, setCardCvc, setCardPassword } =
+		useCardForm();
+	return (
+		<div className="card-container">
+			<div className="card-notice">
+				<p>결제 카드 정보를 입력해주세요.</p>
+			</div>
+			<form className="card-data-form" value={state}>
+				<div className="card-owner-wrapper">
+					<CreditCardInput
+						className={"card-owner-input"}
+						labelText={"성명"}
+						type="text"
+						inputValue={state.cardOwner}
+						onChange={(e) => setCardOwner(e.target.value)}
+						placeholder="이름을 입력해주세요"
+					/>
+				</div>
+				<div className="card-number-wrapper">
+					<CreditCardInput
+						className={"card-number-input"}
+						labelText={"카드 번호"}
+						inputValue={state.cardNumber}
+						onChange={(e) => setCardNumber(e.target.value)}
+						type="text"
+						placeholder="카드 번호를 입력해주세요"
+					/>
+				</div>
+				<div className="card-date-cvc-wrapper">
+					<CreditCardInput
+						className={"card-date-input"}
+						labelText={"유효 기간"}
+						type="text"
+						inputValue={state.cardDate}
+						onChange={(e) => setCardDate(e.target.value)}
+						placeholder="MM/YY"
+					/>
+					<CreditCardInput
+						className={"card-cvc-input"}
+						labelText={"CVC"}
+						inputValue={state.cardCvc}
+						onChange={(e) => setCardCvc(e.target.value)}
+						type="text"
+						placeholder="카드 뒷면 3자리 숫자"
+					/>
+				</div>
+				<div className="card-password-wrapper">
+					<CreditCardInput
+						className={"card-password-input"}
+						labelText={"비밀번호"}
+						inputValue={state.cardPassword}
+						onChange={(e) => setCardPassword(e.target.value)}
+						type="password"
+						placeholder="카드 비밀번호 앞 2자리"
+					/>
+				</div>
+				<Button type="submit" className="card-submit-button" onClick={submitCardForm}>
+					결제하기
+				</Button>
+			</form>
+		</div>
+	);
+};
