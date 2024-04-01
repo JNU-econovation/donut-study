@@ -26,28 +26,23 @@ export default function AddCardPage() {
     setCardformData(defaultCard);
   };
 
+  const changeCardFormData = (key, value) => {
+    setCardformData((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
   return (
     <main className={styles.main}>
       <CardAddForm
         cardFormData={cardformData}
-        cardCVCChangeHandler={(cardCVC) => {
-          setCardformData((prev) => ({
-            ...prev,
-            cardCVC,
-          }));
-        }}
-        cardMMYYChangeHandler={(cardMMYY) => {
-          setCardformData((prev) => ({
-            ...prev,
-            cardMMYY,
-          }));
-        }}
-        cardNameChangeHandler={(cardName) => {
-          setCardformData((prev) => ({
-            ...prev,
-            cardName,
-          }));
-        }}
+        cardCVCChangeHandler={(value) => changeCardFormData("cardCVC", value)}
+        cardMMYYChangeHandler={(value) => changeCardFormData("cardMMYY", value)}
+        cardNameChangeHandler={(value) => changeCardFormData("cardName", value)}
+        cardPasswordChangeHandler={(value) =>
+          changeCardFormData("cardPassword", value)
+        }
         cardNumberChangeHandler={(cardNthNumber, nthNumber) => {
           setCardformData((prev) => ({
             ...prev,
@@ -55,12 +50,6 @@ export default function AddCardPage() {
               ...cardformData.cardNumber,
               [nthNumber]: cardNthNumber,
             },
-          }));
-        }}
-        cardPasswordChangeHandler={(cardPassword) => {
-          setCardformData((prev) => ({
-            ...prev,
-            cardPassword,
           }));
         }}
         addCard={addCard}
