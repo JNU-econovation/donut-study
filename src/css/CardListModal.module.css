@@ -1,0 +1,35 @@
+.container {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 48.75rem;
+  height: 5rem;
+  display: flex;
+}
+
+.imgBox {
+  width: 16%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.imgBox > img {
+  height: 100%;
+}
+
+.contentBox {
+  width: 84%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 0.5rem;
+  gap: 1rem;
+}
+
+.contentBox > p,
+h4 {
+  margin: 0;
+}
