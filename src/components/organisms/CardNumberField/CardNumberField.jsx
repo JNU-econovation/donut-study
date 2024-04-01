@@ -11,7 +11,7 @@ export default function CardNumberField({
       <Label id="CardNumber" inputLabel="카드 번호" />
       <div className={styles.fieldDivition}>
         <Input
-          id="CardNumber"
+          id="CardNumber1"
           inputType="number"
           placeholder="0000"
           value={cardNumber.firstCardNumber}
@@ -21,7 +21,7 @@ export default function CardNumberField({
         />
         _
         <Input
-          id="CardNumber"
+          id="CardNumber2"
           inputType="number"
           placeholder="0000"
           value={cardNumber.secondCardNumber}
@@ -31,7 +31,7 @@ export default function CardNumberField({
         />
         _
         <Input
-          id="CardNumber"
+          id="CardNumber3"
           inputType="password"
           placeholder="****"
           value={cardNumber.thirdCardNumber}
@@ -41,7 +41,7 @@ export default function CardNumberField({
         />
         _
         <Input
-          id="CardNumber"
+          id="CardNumber4"
           inputType="password"
           placeholder="****"
           value={cardNumber.fourthCardNumber}
