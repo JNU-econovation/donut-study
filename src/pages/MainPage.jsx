@@ -3,7 +3,12 @@ import MainLayout from '../components/layout/MainLayout';
 import { useState } from 'react';
 import CardListModal from '../components/block/CardListModal';
 import useRemove from '../hooks/useRemove';
-import { cardNameCheck, cvcNumberCheck, dateCheck } from '../utils/validation';
+import {
+  cardNameCheck,
+  cvcNumberCheck,
+  dateCheck,
+  passWordCheck,
+} from '../utils/validation';
 
 const MainPage = () => {
   const [cardList, setCardList] = useState([]);
@@ -11,6 +16,7 @@ const MainPage = () => {
   const [cardNameValid, setCardNameValid] = useState(false);
   const [cvcNumberValid, setcvcNumberValid] = useState(false);
   const [dateValid, setDateValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
 
   const removeCard = useRemove(cardList, setCardList);
 
@@ -18,8 +24,9 @@ const MainPage = () => {
     const isCardNameValid = cardNameCheck(cardInfo.cardName);
     const isCvcNumberValid = cvcNumberCheck(cardInfo.cvcNumber);
     const isDateValid = dateCheck(cardInfo.expirationDate);
+    const isPassWordValid = passWordCheck(cardInfo.cardPassWord);
 
-    if (isCardNameValid && isCvcNumberValid && isDateValid) {
+    if (isCardNameValid && isCvcNumberValid && isDateValid && isPassWordValid) {
       const newCard = { ...cardInfo, id: nextId };
       setCardList((prevCardList) => [...prevCardList, newCard]);
       setNextId(nextId + 1);
@@ -29,6 +36,8 @@ const MainPage = () => {
       setcvcNumberValid(false);
     } else if (!isDateValid) {
       setDateValid(false);
+    } else if (!isPassWordValid) {
+      setPasswordValid(false);
     }
   };
 
@@ -43,6 +52,7 @@ const MainPage = () => {
         cardNameValid={cardNameValid}
         cvcNumberValid={cvcNumberValid}
         dateValid={dateValid}
+        passwordValid={passwordValid}
       />
       {cardList.map((cardInfo, index) => (
         <CardListModal

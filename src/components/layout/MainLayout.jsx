@@ -7,12 +7,7 @@ import CvcInput from '../block/CvcInput';
 import ExpirationDateInput from '../block/ExpirationDateInput';
 import DefaultButton from '../atom/DefaultButton';
 
-const MainLayout = ({
-  onButtonClick,
-  cardNameValid,
-  cvcNumberValid,
-  expirationDate,
-}) => {
+const MainLayout = ({ onButtonClick }) => {
   const [cardInfo, setCardInfo] = useState({
     cardName: '',
     cardNumber: '',

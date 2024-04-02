@@ -71,3 +71,21 @@ export const dateCheck = (expirationDate) => {
 
   return true
 }
+
+export const passWordCheck = (passWord) => {
+  const checkPw = /^\d{2}$/;
+
+  if (passWord.length > 2) {
+    return false
+  }
+
+  if (passWord.trim() === '') {
+    return false
+  }
+
+  if (!checkPw.test(passWord)) {
+    return false
+  }
+
+  return true
+}
