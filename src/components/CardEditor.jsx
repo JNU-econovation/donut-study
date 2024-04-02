@@ -52,7 +52,6 @@ const CardEditor = ({ cardRegister }) => {
   };
   return (
     <>
-      {" "}
       {inputFields.map((field, index) => (
         <EditorBox key={index}>
           <>
