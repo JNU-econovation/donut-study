@@ -80,15 +80,17 @@ const MainPage = () => {
         cardNnumberValid={cardNnumberValid}
         notify={notify}
       />
-      {cardList.map((cardInfo, index) => (
-        <CardListModal
-          key={index}
-          info={cardInfo}
-          cardList={cardList}
-          setCardList={setCardList}
-          onRemoveButtonClick={handleRemoveButtonClick}
-        />
-      ))}
+      <div className={styles.cardList}>
+        {cardList.map((cardInfo, index) => (
+          <CardListModal
+            key={index}
+            info={cardInfo}
+            cardList={cardList}
+            setCardList={setCardList}
+            onRemoveButtonClick={handleRemoveButtonClick}
+          />
+        ))}
+      </div>
     </div>
   );
 };
