@@ -6,9 +6,8 @@ import CardPwInput from '../block/CardPwInput';
 import CvcInput from '../block/CvcInput';
 import ExpirationDateInput from '../block/ExpirationDateInput';
 import DefaultButton from '../atom/DefaultButton';
-import { cardNameCheck } from '../../utils/validation';
 
-const MainLayout = ({ onButtonClick, cardNameValid }) => {
+const MainLayout = ({ onButtonClick, cardNameValid, cvcNumberValid }) => {
   const [cardInfo, setCardInfo] = useState({
     cardName: '',
     cardNumber: '',
