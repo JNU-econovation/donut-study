@@ -47,30 +47,40 @@ const MainPage = () => {
       toast.success('카드를 성공적으로 등록하셨습니다!');
     } else if (!isCardNameValid) {
       setCardNameValid(false);
-      toast.error('카드 이름을 올바르게 입력해주세요');
+      toast.error(
+        '카드 이름을 올바르게 입력해주세요!\n10자 이하 공백, 특수문자 금지!'
+      );
     } else if (!isCvcNumberValid) {
       setcvcNumberValid(false);
-      toast.error('CVC 번호를 올바르게 입력해주세요');
+      toast.error(
+        'CVC 번호를 올바르게 입력해주세요! \n 공백을 제외한 숫자 3개!'
+      );
     } else if (!isDateValid) {
       setDateValid(false);
-      toast.error('유효 기간을 올바르게 입력해주세요!');
+      toast.error(
+        '유효 기간을 올바르게 입력해주세요! \n 월 12 이하, 년도 24 이상! 공백을 제외한 숫자 4개'
+      );
     } else if (!isPassWordValid) {
       setPasswordValid(false);
-      toast.error('비밀번호를 올바르게 입력해주세요!');
+      toast.error(
+        '비밀번호를 올바르게 입력해주세요! \n 공백을 제외한 숫자 2개!'
+      );
     } else if (!isCardNumberValid) {
       setCardNumberValid(false);
-      toast.error('카드번호를 올바르게 입력해주세요!');
+      toast.error(
+        '카드번호를 올바르게 입력해주세요! \n 각 공백을 제외한 숫자 4개!'
+      );
     }
   };
 
   const handleRemoveButtonClick = (targetId) => {
     removeCard(targetId);
-    toast.success('카드를 삭제하셨습니다.');
+    toast.warn('카드를 삭제하셨습니다.');
   };
 
   return (
     <div className={styles.container}>
-      <ToastContainer />
+      <ToastContainer position='top-center' autoClose={3000} />
       <MainLayout
         onButtonClick={handleButtonClick}
         cardNameValid={cardNameValid}
