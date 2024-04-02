@@ -71,3 +71,18 @@ const CardEditor = ({ cardRegister }) => {
 };
 
 export default CardEditor;
+
+const EditorBox = styled.div`
+  div {
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  margin-left: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  border-bottom: 1px solid gainsboro;
+`;
