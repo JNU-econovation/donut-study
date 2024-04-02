@@ -33,6 +33,23 @@ const CardEditor = ({ cardRegister }) => {
     });
   };
 
+  const onSubmit = () => {
+    alert("카드 정보가 등록되었습니다.");
+    cardRegister(
+      input.name,
+      input.number,
+      input.expirationDate,
+      input.cvc,
+      input.password
+    );
+    setInput({
+      name: "",
+      number: "",
+      expirationDate: "",
+      cvc: "",
+      password: "",
+    });
+  };
   return (
     <>
       {" "}
@@ -66,6 +83,7 @@ const CardEditor = ({ cardRegister }) => {
           </>
         </EditorBox>
       ))}
+      <RegisterBtn onClick={onSubmit}>완료</RegisterBtn>
     </>
   );
 };
@@ -85,4 +103,10 @@ const EditorBox = styled.div`
   justify-content: center;
   height: 5rem;
   border-bottom: 1px solid gainsboro;
+`;
+const RegisterBtn = styled.button`
+  height: 3.4rem;
+  background-color: rgb(239, 239, 240);
+  border: none;
+  font-size: 1.15rem;
 `;
