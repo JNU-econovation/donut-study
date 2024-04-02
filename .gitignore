@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.babelrc
+jest.config.cjs
+package-lock.json
