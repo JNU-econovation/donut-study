@@ -96,17 +96,14 @@ export const cardNumberCheck = (cardNumber) => {
 
   for (const number of numbers) {
     if (number.length > 4) {
-      alert('4글자 이상')
       return false
     }
 
     if (number.trim() === '') {
-      alert('공백')
       return false
     }
 
     if (!checkCardNumber.test(number)) {
-      alert('카드넘버 오류')
       return false
     }
   }
