@@ -20,7 +20,37 @@ function App() {
     setCards([newCard, ...cards]);
   };
 
-  return <></>;
+  return (
+    <>
+      <CardFrame>
+        <Title>카드 정보를 입력해주세요.</Title>
+        <CardEditor cardRegister={cardRegister} />
+        <CardList cards={cards} />
+      </CardFrame>
+    </>
+  );
 }
 
 export default App;
+
+const CardFrame = styled.div`
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  input {
+    border: none;
+  }
+`;
+
+const Title = styled.div`
+  color: #fff;
+  background-color: rgb(137, 145, 160);
+  height: 3rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
