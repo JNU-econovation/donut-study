@@ -1,4 +1,4 @@
-import { cardNameCheck, cvcNumberCheck, dateCheck } from '../src/utils/validation';
+import { cardNameCheck, cvcNumberCheck, dateCheck, passWordCheck } from '../src/utils/validation';
 
 describe('cardNameCheck 함수', () => {
   test('공백이 아니며, 공백을 포함하지 않고, 특수 문자가 없는 경우', () => {
@@ -59,5 +59,23 @@ describe('dateCheck 함수', () => {
 
   test('년도가 잘못된 경우', () => {
     expect(dateCheck('0723')).toBe(false);
+  });
+});
+
+describe('cardPasswordChcek 함수', () => {
+  test('공백이 아니며, 공백을 포함하지 않고, 숫자이며 2글자인 경우', () => {
+    expect(passWordCheck('12')).toBe(true);
+  });
+
+  test('2글자가 넘는 경우', () => {
+    expect(passWordCheck('123')).toBe(false);
+  });
+
+  test('특수 문자가 포함된 경우', () => {
+    expect(passWordCheck('1!')).toBe(false);
+  });
+
+  test('빈 문자열인 경우', () => {
+    expect(passWordCheck('')).toBe(false);
   });
 });
