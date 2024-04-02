@@ -1,17 +1,26 @@
 import { CreditCardInput } from "./CreditCardInput";
 import { Button } from "../common/Button";
 import { useCardForm } from "../hooks/useCardForm";
+import { CreditCardModal } from "./CreditCardModal";
 import "./style/CreditCard.style.scss";
 
 export const CreditCard = () => {
-	const { state, submitCardForm, setCardOwner, setCardNumber, setCardDate, setCardCvc, setCardPassword } =
+	const { state, modalState, submitCardForm, setCardOwner, setCardNumber, setCardDate, setCardCvc, setCardPassword } =
 		useCardForm();
+	const payerDetail = modalState.payerDetail;
+	const payerName = payerDetail.cardOwner;
+	const payerCardNumber = payerDetail.cardNumber;
+	const splitCardNumber = payerCardNumber
+		.replace(/-/g, "")
+		.replace(/(\d{4})/g, "$1-")
+		.slice(0, -1);
+
 	return (
 		<div className="card-container">
 			<div className="card-notice">
 				<p>결제 카드 정보를 입력해주세요.</p>
 			</div>
-			<form className="card-data-form" value={state}>
+			<div className="card-data-form" value={state}>
 				<div className="card-owner-wrapper">
 					<CreditCardInput
 						className={"card-owner-input"}
@@ -60,10 +69,11 @@ export const CreditCard = () => {
 						placeholder="카드 비밀번호 앞 2자리"
 					/>
 				</div>
-				<Button type="submit" className="card-submit-button" onClick={submitCardForm}>
+				<Button className="card-submit-button" onClick={submitCardForm}>
 					결제하기
 				</Button>
-			</form>
+			</div>
+			{modalState.isModalOpen && <CreditCardModal cardOwner={payerName} cardNumber={splitCardNumber} />}
 		</div>
 	);
 };
