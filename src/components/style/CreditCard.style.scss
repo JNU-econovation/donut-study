@@ -58,3 +58,26 @@
 		width: 20rem;
 	}
 }
+
+.card-modal-container {
+	img {
+		padding: 1rem;
+		width: 7rem;
+	}
+}
+
+.payer-detail-container {
+	display: flex;
+	flex-direction: row;
+	.payer-wrapper {
+		.payer-name {
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		.payer-card-number {
+			font-size: 1.5rem;
+			font-weight: 500;
+		}
+	}
+}
