@@ -1,17 +1,12 @@
 import styles from "./CardList.module.css";
 import ListImage from "../../atoms/ListImage/ListImage";
+import CardListContent from "../CardListContent/CardListContent";
 
 export default function CardList({ cardName, cardNumber }) {
   return (
     <li className={styles.cardlist}>
       <ListImage />
-      <div>
-        <p>{cardName}</p>
-        <p>
-          카드 번호: {cardNumber.firstCardNumber} -{" "}
-          {cardNumber.secondCardNumber} - **** - ****
-        </p>
-      </div>
+      <CardListContent cardName={cardName} cardNumber={cardNumber} />
     </li>
   );
 }
