@@ -33,7 +33,41 @@ const CardEditor = ({ cardRegister }) => {
     });
   };
 
-  return <></>;
+  return (
+    <>
+      {" "}
+      {inputFields.map((field, index) => (
+        <EditorBox key={index}>
+          <>
+            {field.title === "카드 비밀번호" ? (
+              <>
+                <div>{field.title}</div>
+                <input
+                  type="password"
+                  key={index}
+                  name={field.name}
+                  value={input[field.name]}
+                  placeholder={field.placeholder}
+                  onChange={onChange}
+                />
+              </>
+            ) : (
+              <>
+                <div>{field.title}</div>
+                <input
+                  key={index}
+                  name={field.name}
+                  value={input[field.name]}
+                  placeholder={field.placeholder}
+                  onChange={onChange}
+                />
+              </>
+            )}
+          </>
+        </EditorBox>
+      ))}
+    </>
+  );
 };
 
 export default CardEditor;
