@@ -39,3 +39,35 @@ export const cvcNumberCheck = (cvcNumber) => {
 
   return true
 }
+
+export const dateCheck = (expirationDate) => {
+  const checkDate = /^\d{4}$/;
+  const month = parseInt(expirationDate.slice(0, 2));
+  const year = parseInt(expirationDate.slice(2, 4));
+
+
+  if (expirationDate.length > 4) {
+    return false
+  }
+
+  if (expirationDate.trim() === '') {
+    // alert('공백금지!');
+    return false;
+  }
+
+  if (month > 12) {
+    // alert('달 확인 부탁');
+    return false
+  }
+
+  if (year < 24) {
+    // alert('년 확인 부탁');
+    return false
+  }
+
+  if (!checkDate.test(expirationDate)) {
+    return false
+  }
+
+  return true
+}
