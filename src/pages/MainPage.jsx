@@ -39,7 +39,7 @@ const MainPage = () => {
       isCvcNumberValid &&
       isDateValid &&
       isPassWordValid &&
-      isPassWordValid
+      isCardNumberValid
     ) {
       const newCard = { ...cardInfo, id: nextId };
       setCardList((prevCardList) => [...prevCardList, newCard]);
