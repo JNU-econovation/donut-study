@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from '../../css/CardNumberInput.module.css';
 import DefaultInput from '../atom/DefaultInput';
 
-const CardNumberInput = ({ onChange, value }) => {
+const CardNumberInput = ({ onChange, value, cardNumberValid }) => {
   const [eachNumber, setEachNumber] = useState({
     firstNumb: '',
     secondNumb: '',
@@ -16,7 +16,7 @@ const CardNumberInput = ({ onChange, value }) => {
     third = eachNumber.thirdNumb,
     fourth = eachNumber.fourthNumb,
   }) => {
-    const cardNumber = first + '-' + second + '-' + '****' + '-' + '****';
+    const cardNumber = first + '-' + second + '-' + third + '-' + fourth;
     onChange(cardNumber);
   };
 

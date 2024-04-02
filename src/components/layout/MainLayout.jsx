@@ -7,7 +7,7 @@ import CvcInput from '../block/CvcInput';
 import ExpirationDateInput from '../block/ExpirationDateInput';
 import DefaultButton from '../atom/DefaultButton';
 
-const MainLayout = ({ onButtonClick }) => {
+const MainLayout = ({ onButtonClick, cardNumberValid }) => {
   const [cardInfo, setCardInfo] = useState({
     cardName: '',
     cardNumber: '',
@@ -65,7 +65,10 @@ const MainLayout = ({ onButtonClick }) => {
         <p>카드 정보를 입력해주세요</p>
       </div>
       <CardNameInput onChange={handleNameChange} />
-      <CardNumberInput onChange={handleNumberChange} />
+      <CardNumberInput
+        onChange={handleNumberChange}
+        cardNumberValid={cardNumberValid}
+      />
       <div className={styles.flexBox}>
         <ExpirationDateInput onChange={handleDateChange} />
         <CvcInput onChange={handleCvcChange} />
