@@ -4,6 +4,9 @@ import CardButton from '../atom/CardButton';
 
 const CardListModal = ({ info, onRemoveButtonClick }) => {
   const { id, cardName, cardNumber } = info;
+  const numbers = info.cardNumber.split('-');
+
+  const formattedCardNumber = `${numbers[0]} - ${numbers[1]} - **** - ****`;
 
   const handleButtonClick = () => {
     onRemoveButtonClick(id);
@@ -16,7 +19,7 @@ const CardListModal = ({ info, onRemoveButtonClick }) => {
       </div>
       <div className={styles.contentBox}>
         <h4>카드명 : {cardName}</h4>
-        <p>CardNumber : {cardNumber}</p>
+        <p>CardNumber : {formattedCardNumber}</p>
       </div>
       <CardButton buttonText='삭제' onClick={handleButtonClick} />
     </div>
