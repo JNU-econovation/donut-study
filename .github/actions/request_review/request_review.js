@@ -21,7 +21,7 @@ const USERS = [
 try {
   const url = core.getInput("slack_url");
   const webhook = new IncomingWebhook(url);
-
+  const sendRequestReview = () => {};
   const send = () => {
     webhook.send(
       {
@@ -49,8 +49,7 @@ try {
                 type: "mrkdwn",
                 text: `<@${
                   USERS.find(
-                    (user) =>
-                      user.githubID === github.context.payload.sender.id,
+                    (user) => user.githubID === github.context.payload.sender.id
                   )?.slackID
                 }>님이 PR을 보냈습니다!`,
               },
@@ -64,7 +63,7 @@ try {
                 text: `${github.context.payload.pull_request.requested_reviewers
                   .map((reviewer) => {
                     const slackID = USERS.find(
-                      (user) => user.githubID === reviewer.id,
+                      (user) => user.githubID === reviewer.id
                     )?.slackID;
                     return slackID ? `<@${slackID}>` : undefined;
                   })
@@ -90,10 +89,13 @@ try {
       },
       function (err, response) {
         console.log(response);
-      },
+      }
     );
   };
-  if (github.context.payload.pull_request.requested_reviewers.length > 0)
+  if (
+    github.context.payload.pull_request.requested_reviewers.length > 0 ||
+    github.context.payload.pull_request.action === "review_requested"
+  )
     send();
 } catch (error) {
   core.setFailed(error.message);
