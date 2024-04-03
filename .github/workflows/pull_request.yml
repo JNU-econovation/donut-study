@@ -19,7 +19,7 @@ jobs:
           key: npm-packages-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install
       - name: Start PR actions
         id: PRAction
         uses: ./.github/actions/request_review
