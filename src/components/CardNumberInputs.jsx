@@ -1,15 +1,16 @@
 // CardNumberInputs 컴포넌트
 import React from "react";
-import DataInput from "./DataInput"; // DataInput 컴포넌트를 임포트합니다.
+import DataInput from "./DataInput";
 
 const CardNumberInputs = ({ cardNumbers, handleInputChange }) => {
   return (
     <div
       style={{
         display: "flex",
+        width: "100%",
+        justifyContent: "space-between",
       }}
     >
-      <div>카드번호</div>
       {cardNumbers.map((number, index) => (
         <DataInput
           key={index}
