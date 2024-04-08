@@ -1,18 +1,15 @@
 import styles from '../../css/Item.module.css';
-import Data from '../../../public/api/products.json';
 
-function Item() {
-  const example = Data[0];
-  console.log(example);
+function Item({ product }) {
   return (
     <div className={styles.container}>
       <div className={styles.imgBox}>
-        <img src={example.src} alt='상품 이미지' />
+        <img src={product.src} alt='상품 이미지' />
       </div>
       <div className={styles.infoBox}>
-        <h2>{example.name}</h2>
+        <h2>{product.name}</h2>
         <div className={styles.priceBox}>
-          <h2>{example.price}</h2>
+          <h2>{product.price}</h2>
           <p>원</p>
         </div>
       </div>
