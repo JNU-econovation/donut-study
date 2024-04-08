@@ -20,13 +20,18 @@ function ShopPage() {
     itemData();
   }, []);
 
-  console.log(products);
+  const handleOnSale = () => {
+    const onSaleProducts = products.filter(
+      (product) => product.isSale === 'true'
+    );
+    setProducts(onSaleProducts);
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.buttonBox}>
         <DefaultButton buttonText='All' />
-        <DefaultButton buttonText='on Sale' />
+        <DefaultButton buttonText='on Sale' onClick={() => handleOnSale()} />
         <DefaultButton buttonText='price low-high' />
       </div>
       <div className={styles.itemBox}>
