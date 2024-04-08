@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import styles from '../css/MainPage.module.css';
 import YouTube from 'react-youtube';
 

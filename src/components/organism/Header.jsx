@@ -1,8 +1,8 @@
-import styles from '../css/Header.module.css';
-import ecnv from '../assets/Images/ecnv.png';
-import user from '../assets/Images/user.png';
-import cart from '../assets/Images/cart.png';
-import TabButton from './atom/TabButton';
+import styles from '../../css/Header.module.css';
+import ecnv from '../../assets/Images/ecnv.png';
+import user from '../../assets/Images/user.png';
+import cart from '../../assets/Images/cart.png';
+import TabButton from '../atom/TabButton';
 import { Link } from 'react-router-dom';
 
 function Header() {

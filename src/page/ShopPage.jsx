@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DefaultButton from '../components/atom/DefaultButton';
 import ItemList from '../components/organism/ItemList';
 import styles from '../css/ShopPage.module.css';
