@@ -48,3 +48,24 @@ function App() {
 }
 
 export default App;
+
+const ProductFrame = styled.div`
+  padding: 1.5rem;
+`;
+const ProductList = styled.div`
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  & > div {
+    width: calc((100% - 10rem) / 3);
+  }
+`;
+
+const Button = styled.button`
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  width: auto;
+  height: 3rem;
+`;
