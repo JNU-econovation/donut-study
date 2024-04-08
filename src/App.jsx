@@ -1,10 +1,19 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Card from './components/Card';
+import Header from './components/Header';
+import MainPage from './page/MainPage';
+import ShopPage from './page/ShopPage';
 
 function App() {
   return (
     <div>
-      <Card />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/shop' element={<ShopPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

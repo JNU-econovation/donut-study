@@ -5,7 +5,6 @@ import YouTube from 'react-youtube';
 function MainPage() {
   return (
     <div className={styles.container}>
-      <Header />
       <div className={styles.videoBox}>
         <YouTube
           videoId='YDErLmbjSRM'
@@ -16,6 +15,8 @@ function MainPage() {
               autoplay: 1,
               mute: 1,
               loop: 1,
+              controls: 0,
+              modestbranding: 0,
             },
           }}
           containerClassName={styles.videoContainer}
