@@ -18,7 +18,33 @@ function App() {
         setProducts(res.data);
       });
   }, [currentView]);
-  return <></>;
+  return (
+    <>
+      <img src={Image} style={{ width: "100%" }} />
+      <ProductFrame>
+        {
+          <Button
+            onClick={() => {
+              setcurrentView(
+                currentView === "Sale product" ? "All product" : "Sale product"
+              );
+            }}
+          >
+            {currentView === "All product" ? "All product" : "Sale product"}
+          </Button>
+        }
+        <ProductList>
+          {products.map((product) => (
+            <div key={product.id}>
+              <img src={product.src} style={{ width: "100%" }} />
+              <div>{product.name}</div>
+              <div>{product.price}</div>
+            </div>
+          ))}
+        </ProductList>
+      </ProductFrame>
+    </>
+  );
 }
 
 export default App;
