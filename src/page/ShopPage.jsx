@@ -27,12 +27,22 @@ function ShopPage() {
     setProducts(onSaleProducts);
   };
 
+  const handlePrice = () => {
+    const priceLowHigh = [...products].sort(
+      (a, b) => parseInt(a.price) - parseInt(b.price)
+    );
+    setProducts(priceLowHigh);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.buttonBox}>
         <DefaultButton buttonText='All' />
         <DefaultButton buttonText='on Sale' onClick={() => handleOnSale()} />
-        <DefaultButton buttonText='price low-high' />
+        <DefaultButton
+          buttonText='price low-high'
+          onClick={() => handlePrice()}
+        />
       </div>
       <div className={styles.itemBox}>
         <ItemList products={products} />
