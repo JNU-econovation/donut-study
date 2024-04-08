@@ -34,10 +34,20 @@ function ShopPage() {
     setProducts(priceLowHigh);
   };
 
+  const handleAllItem = async () => {
+    try {
+      const response = await fetch('/api/products.json');
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      console.error('상품을 받아오지 못했습니다');
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.buttonBox}>
-        <DefaultButton buttonText='All' />
+        <DefaultButton buttonText='All' onClick={() => handleAllItem()} />
         <DefaultButton buttonText='on Sale' onClick={() => handleOnSale()} />
         <DefaultButton
           buttonText='price low-high'
