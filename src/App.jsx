@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import axios from "axios";
 
 const App = () => {
   const [showSaleProduct, setShowSaleProduct] = useState(false);
@@ -7,12 +8,23 @@ const App = () => {
   function handleShowSale() {
     setShowSaleProduct(!showSaleProduct);
   }
-  const fetchProducts = useEffect(() => {
+  function fetchProducts(url) {
+    axios
+      .get(url) // 요청을 보낼 URL
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error :", error);
+      });
+  }
+
+  useEffect(() => {
     const url = showSaleProduct
-      ? "api/sale_products.json"
+      ? "api/products.json"
       : "api/sale_products.json";
     fetchProducts(url);
-  }, []);
+  }, [showSaleProduct]);
   return (
     <div>
       <button onClick={handleShowSale}>
