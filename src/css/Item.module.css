@@ -1,0 +1,44 @@
+.container {
+  width: 28.125rem;
+  height: 36.25rem;
+  position: relative;
+}
+
+.imgBox {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgBox > img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.infoBox > h2 {
+  margin: 0;
+}
+
+.priceBox {
+  display: flex;
+  align-items: first baseline;
+}
+
+.priceBox > h2 {
+  margin: 0;
+}
+.priceBox > p {
+  color: grey;
+  margin: 0;
+}
