@@ -1,0 +1,24 @@
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  flex-basis: 33%;
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  padding: 0.8rem;
+  margin: 1rem 3rem;
+  border: none;
+  background-color: rgb(149, 149, 149);
+  color: rgb(255, 255, 255);
+  border-radius: 0.2rem;
+}
