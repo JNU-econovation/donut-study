@@ -5,7 +5,7 @@ import axios from "axios";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [currentView, setcurrentView] = useState("All product");
+  const [currentView, seCurrentView] = useState("All product");
 
   useEffect(() => {
     axios
@@ -25,7 +25,7 @@ function App() {
         {
           <Button
             onClick={() => {
-              setcurrentView(
+              seCurrentView(
                 currentView === "Sale product" ? "All product" : "Sale product"
               );
             }}
