@@ -1,0 +1,59 @@
+.container {
+  width: 106.25rem;
+  height: 7.25rem;
+  background: black;
+  display: flex;
+}
+
+.logoWrapper {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.logoBox > img {
+  margin-left: 1.5rem;
+  height: 3rem;
+}
+
+.buttonBox {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userBox {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userBox > img {
+  width: 2rem;
+}
+
+.userButton {
+  background: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  margin-right: 1rem;
+}
+
+.userButton > img {
+  width: 2rem;
+}
+
+.cartButton {
+  width: 2rem;
+  height: 2rem;
+  background: black;
+  border: none;
+}
+
+.cartButton > img {
+  width: 2rem;
+}

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  position: relative;
+}
+
+.itemBox {
+  margin-top: 4rem;
+}
+
+.buttonBox {
+  position: absolute;
+  top: 1rem;
+  right: 8rem;
+}

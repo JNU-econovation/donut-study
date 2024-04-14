@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "src": "https://img.freepik.com/free-photo/jeans_1203-8092.jpg",
+    "name": "무시무시한바지",
+    "price": "500000",
+    "isSale": "true"
+  },
+  {
+    "id": 2,
+    "src": "https://img.freepik.com/free-psd/jerzees-pullover-hooded-sweatshirt-mockup-01_126278-94.jpg?w=1480&t=st=1712066977~exp=1712067577~hmac=e2134a114b35532277ab0c2b76ae698527139f0b46b345c0caa0e9aa3d66cd33",
+    "name": "후드티",
+    "price": "500000",
+    "isSale": "true"
+  },
+  {
+    "id": 3,
+    "src": "https://img.freepik.com/free-photo/basic-white-tee-women-s-apparel-rear-view_53876-108033.jpg?t=st=1712067014~exp=1712070614~hmac=7f176e8ed6876ac7593cb0bf2cc392ede4372858b1fec4bb3e585546753bea02&w=1380",
+    "name": "반팔 티",
+    "price": "200000",
+    "isSale": "false"
+  },
+  {
+    "id": 4,
+    "src": "https://img.freepik.com/free-photo/background-textile-protection-back-object_1203-6405.jpg?t=st=1712067043~exp=1712070643~hmac=30c53d8fcb2e8a6d516b952a2f0b1df44ee66af6ec82856ec8f0e676db9b5c8e&w=1060",
+    "name": "볼 캡 (야구모자)",
+    "price": "500000",
+    "isSale": "true"
+  },
+  {
+    "id": 5,
+    "src": "https://img.freepik.com/free-photo/still-life-rendering-jackets-display_23-2149745031.jpg?t=st=1712067097~exp=1712070697~hmac=2a020243be6e84e0541f2292493bb00dd13ea328e50021ceff86fa567e5fab95&w=2000",
+    "name": "가죽 자켓",
+    "price": "500000",
+    "isSale": "true"
+  },
+  {
+    "id": 6,
+    "src": "https://img.freepik.com/free-vector/all-types-black-white-socks-sports-every-day-realistic-set-isolated-vector-illustration_1284-73137.jpg?t=st=1712067118~exp=1712070718~hmac=d5bc8f8b274ebd67d98d0bfa02db9e530818eb49b18a7ed13fa3751f26737dae&w=2000",
+    "name": "양말",
+    "price": "200000",
+    "isSale": "false"
+  }
+]
