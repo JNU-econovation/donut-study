@@ -20,8 +20,8 @@ const USERS = [
 
 try {
   const url = core.getInput("slack_url");
+  console.log(url);
   const webhook = new IncomingWebhook(url);
-  const sendRequestReview = () => {};
   const send = () => {
     webhook.send(
       {
@@ -47,11 +47,10 @@ try {
             fields: [
               {
                 type: "mrkdwn",
-                text: `<@${
-                  USERS.find(
-                    (user) => user.githubID === github.context.payload.sender.id
-                  )?.slackID
-                }>님이 PR을 보냈습니다!`,
+                text: `<@${USERS.find(
+                  (user) => user.githubID === github.context.payload.sender.id
+                )?.slackID
+                  }>님이 PR을 보냈습니다!`,
               },
             ],
           },
