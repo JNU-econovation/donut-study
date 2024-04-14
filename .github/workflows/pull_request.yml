@@ -1,6 +1,9 @@
 on:
   pull_request_target:
-    types: [opened, reopened, review_requested]
+    types:
+      - opened
+      - reopened
+      - review_requested
 
 jobs:
   request_review:
