@@ -1,6 +1,4 @@
-import "./App.css";
 import styled from "styled-components";
-import Button from "./components/Button";
 import CouponBox from "./components/CouponBox";
 import { useState } from "react";
 
@@ -27,7 +25,7 @@ function App() {
     <CouponContainer>
       <h2>커피 쿠폰함</h2>
       <div> ☆ 10번 주문하시면 원하시는 커피를 제공해드립니다 ☆ </div>
-      <Button onClick={handleOrderButtonClick} text={"커피 주문하기"} />
+      <button onClick={handleOrderButtonClick}>커피 주문하기 </button>
       <CouponBox couponCount={order} />
       <button disabled={order < 10} onClick={couponSubmit}>
         쿠폰 제출

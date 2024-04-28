@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import Button from "./Button";
 const CouponBox = ({ couponCount }) => {
   const couponStamp = [];
+  //fontColor={"#9a3138"} color={"white"}
 
   for (let i = 0; i < couponCount; i++) {
-    couponStamp.push(
-      <Button fontColor={"#9a3138"} color={"white"} text={`${i + 1}`} />
-    );
+    couponStamp.push(<button>{`${i + 1}`} </button>);
   }
   return (
     <>
@@ -30,4 +28,8 @@ const CouponBlock = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center; //컨테이너 안의 모든 아이템들이 교차 축 방향으로 중앙에 위치한다. 이 속성은 다양한 크기를 가진 아이템들을 정렬할 때 유용하다.
+  button {
+    background-color: #fff;
+    color: #9a3138;
+  }
 `;
