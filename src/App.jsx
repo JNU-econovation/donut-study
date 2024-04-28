@@ -11,11 +11,14 @@ function App() {
     if (order < 10) {
       setOrder(order + 1);
     } else {
-      console.log("더이상 카운트가 되지않습니다.");
+      alert("쿠폰을 먼저 제출해주세요");
     }
   };
 
-  const couponSubmit = () => {
+  const couponSubmit = (order) => {
+    if (order < 10) {
+      return;
+    }
     alert("쿠폰 10장을 커피로 교환합니다.");
     setOrder(0);
   };
@@ -26,13 +29,9 @@ function App() {
       <div> ☆ 10번 주문하시면 원하시는 커피를 제공해드립니다 ☆ </div>
       <Button onClick={handleOrderButtonClick} text={"커피 주문하기"} />
       <CouponBox couponCount={order} />
-      {order >= 10 ? (
-        <button disabled={false} onClick={couponSubmit}>
-          쿠폰 제출
-        </button>
-      ) : (
-        <button disabled={true}>쿠폰 제출</button>
-      )}
+      <button disabled={order < 10} onClick={couponSubmit}>
+        쿠폰 제출
+      </button>
     </CouponContainer>
   );
 }
