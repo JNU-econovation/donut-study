@@ -17,8 +17,8 @@ export default CouponBox;
 
 const CouponBlock = styled.div`
   button {
-    background-color: #fff;
-    color: #9a3138;
+    background-color: #fff !important;
+    color: #9a3138 !important;
   }
   width: 23.5rem;
   height: 7rem;
