@@ -7,7 +7,7 @@ export default function UserInputForm({ wordList, setWordList }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newWordList = wordList.filter((word) => word !== text);
+    const newWordList = wordList.filter((word) => word !== text.trim());
     setWordList(newWordList);
     setText("");
   };
