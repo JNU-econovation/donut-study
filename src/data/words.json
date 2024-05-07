@@ -23,7 +23,6 @@
     "hello",
     "goodbye",
     "please",
-    "thank you",
     "yes",
     "no",
     "home",
@@ -39,7 +38,8 @@
     "night",
     "sun",
     "moon",
-    "star"
+    "star",
+    "earth"
   ],
   "words_length": "40"
 }
