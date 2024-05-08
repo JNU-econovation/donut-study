@@ -3,22 +3,15 @@ import UserInputForm from "./UserInputForm";
 import words from "../data/words.json";
 import { addShownWords, checkIsOver } from "../utils/gameUtils";
 import styled from "styled-components";
-import GAME_CONSTANTS from "../constants/gameConstants";
 
-export default function TypingGame() {
+export default function TypingGame({ flush }) {
   const [wordList, setWordList] = useState([]);
   const { words: wordDatas, words_length } = words;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      checkIsOver(wordList, setWordList); //9개 이상이면 게임 종료
-      addShownWords(setWordList, words_length, wordDatas); //단어 추가
-    }, GAME_CONSTANTS.INTERVAL);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [wordList]);
+    checkIsOver(wordList, setWordList);
+    addShownWords(setWordList, words_length, wordDatas);
+  }, [flush]);
 
   return (
     <>
