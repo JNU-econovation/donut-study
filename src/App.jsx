@@ -1,35 +1,69 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import WordInput from "./components/WordInput";
+import WordArea from "./components/WordArea";
 
-function App() {
-  const [count, setCount] = useState(0)
+const fruits = [
+  "apple",
+  "banana",
+  "cherry",
+  "avocado",
+  "blueberry",
+  "coconut",
+  "grape",
+  "lime",
+  "kiwi",
+  "lemon",
+  "mango",
+  "peach",
+  "pear",
+  "strawberry",
+  "watermelon",
+  "tomato",
+  "melon",
+];
+
+const App = () => {
+  const [words, setWords] = useState([]);
+  const [isGameOver, setIsGameOver] = useState(false);
+
+  useEffect(() => {
+    if (isGameOver) return;
+
+    const wordAdder = setInterval(() => {
+      if (words.length < 10) {
+        const newWord = fruits[Math.floor(Math.random() * fruits.length)];
+        setWords((prevWords) => [...prevWords, newWord]);
+      } else {
+        setIsGameOver(true);
+        alert("게임 종료!");
+        clearInterval(wordAdder);
+      }
+    }, 2000);
+
+    return () => clearInterval(wordAdder);
+  }, [words, isGameOver]);
+
+  const handleWordSubmit = (inputWord) => {
+    setWords(words.filter((word) => word !== inputWord));
+  };
+
+  const resetGame = () => {
+    setWords([]);
+    setIsGameOver(false);
+  };
+
+  useEffect(() => {
+    if (isGameOver) {
+      resetGame();
+    }
+  }, [isGameOver]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="center-container">
+      <WordArea words={words} />
+      <WordInput onWordSubmit={handleWordSubmit} />
+    </div>
+  );
+};
 
-export default App
+export default App;
