@@ -4,8 +4,8 @@ function App() {
   return (
     <section>
       <h1 className="text-lg">그룹 스터디룸 6인 (최소 3인)</h1>
-      <nav className="bg-slate-950">
-        <ul>
+      <nav>
+        <ul className="flex">
           {daysOfWeek.map((item, index) => (
             <li key={`${item}-${index}`}>{item}</li>
           ))}
