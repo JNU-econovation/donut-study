@@ -20,7 +20,13 @@ export default function ReservationModal({ close }) {
       time: selectedTime,
       duration: dutation.find(({ id }) => id === reservationDuration).time,
     };
-    alert(JSON.stringify(reservationData));
+    const resetvatedTime = selectedTime;
+    const resetvatedDay = selectedDay;
+
+    const alertMessage = `예약이 완료되었습니다. 
+    ${resetvatedDay} ${resetvatedTime} ${reservationData.duration} 예약되었습니다.`;
+
+    alert(alertMessage);
   };
   return (
     <>
