@@ -6,6 +6,7 @@ export const ReservationProvider = ({ children }) => {
   const [selectedTime, setSelectedTime] = useState({
     selectedTime: null,
     day: null,
+    date: null,
   });
 
   return (

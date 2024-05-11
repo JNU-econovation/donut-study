@@ -11,8 +11,12 @@ const dutation = [
 // eslint-disable-next-line react/prop-types
 export default function ReservationModal({ close }) {
   const [reservationDuration, setReservationDuration] = useState(0);
+  const [userInput, setUserInput] = useState({
+    studentId: "",
+    name: "",
+  });
   const {
-    selectedTime: { time: selectedTime, day: selectedDay },
+    selectedTime: { time: selectedTime, day: selectedDay, date: selectedDate },
   } = useSelectedTime();
 
   const reserve = () => {
@@ -20,13 +24,15 @@ export default function ReservationModal({ close }) {
       time: selectedTime,
       duration: dutation.find(({ id }) => id === reservationDuration).time,
     };
+    const { studentId, name } = userInput;
     const resetvatedTime = selectedTime;
     const resetvatedDay = selectedDay;
 
     const alertMessage = `예약이 완료되었습니다. 
-    ${resetvatedDay} ${resetvatedTime} ${reservationData.duration} 예약되었습니다.`;
-
+${name}(${studentId})
+${selectedDate}일 (${resetvatedDay}) ${resetvatedTime}_${reservationData.duration} 동안`;
     alert(alertMessage);
+    close();
   };
   return (
     <>
@@ -50,11 +56,17 @@ export default function ReservationModal({ close }) {
           <div className="flex gap-4">
             <input
               type="text"
+              onChange={(e) =>
+                setUserInput({ ...userInput, studentId: e.target.value })
+              }
               placeholder="학번"
               className="p-2 rounded-full w-full"
             />
             <input
               type="text"
+              onChange={(e) =>
+                setUserInput({ ...userInput, name: e.target.value })
+              }
               placeholder="이름"
               className="p-2 rounded-full w-full"
             />

@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 import TimeTable from "./components/TimeTable";
-
-const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
+import { daysOfWeek } from "./constants/date";
+import weekDaysInfo from "./utils/date";
 
 const timeline = [
   { id: 1, time: "9:00" },
@@ -29,23 +29,6 @@ const timeline = [
 ];
 
 function App() {
-  // const [timeData, setTimeData] = useState([]);
-
-  // useEffect(() => {
-  //   const controller = new AbortController();
-  //   const signal = controller.signal;
-
-  //   try {
-  //     fetch("api/time", { signal })
-  //       .then((res) => res.json())
-  //       .then((data) => setTimeData(data));
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-
-  //   return () => controller.abort();
-  // }, []);
-
   return (
     <section>
       <header className="text-lg">그룹 스터디룸 6인 (최소 3인)</header>
@@ -55,9 +38,9 @@ function App() {
           {timeline.map(({ id, time }) => (
             <li
               key={id}
-              className="border-b-2 border-solid border-gray-400 p-2 text-center"
+              className={`border-b-2 border-solid border-gray-400 p-2 text-center`}
             >
-              {time}
+              <p>{time}</p>
             </li>
           ))}
         </ul>
@@ -65,8 +48,8 @@ function App() {
           {daysOfWeek.map((day, index) => (
             <TimeTable
               key={`${day}-${index}`}
-              // timeData={timeData}
               day={day}
+              date={weekDaysInfo[index].date}
             />
           ))}
         </ul>
