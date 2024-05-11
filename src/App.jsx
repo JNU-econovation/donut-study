@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import TimeTable from "./components/TimeTable";
 
 const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
@@ -29,22 +29,22 @@ const timeline = [
 ];
 
 function App() {
-  const [timeData, setTimeData] = useState([]);
+  // const [timeData, setTimeData] = useState([]);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
+  // useEffect(() => {
+  //   const controller = new AbortController();
+  //   const signal = controller.signal;
 
-    try {
-      fetch("api/time", { signal })
-        .then((res) => res.json())
-        .then((data) => setTimeData(data));
-    } catch (error) {
-      console.error(error);
-    }
+  //   try {
+  //     fetch("api/time", { signal })
+  //       .then((res) => res.json())
+  //       .then((data) => setTimeData(data));
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
 
-    return () => controller.abort();
-  }, []);
+  //   return () => controller.abort();
+  // }, []);
 
   return (
     <section>
@@ -63,7 +63,11 @@ function App() {
         </ul>
         <ul className="flex gap-8">
           {daysOfWeek.map((day, index) => (
-            <TimeTable key={`${day}-${index}`} timeData={timeData} day={day} />
+            <TimeTable
+              key={`${day}-${index}`}
+              // timeData={timeData}
+              day={day}
+            />
           ))}
         </ul>
       </nav>

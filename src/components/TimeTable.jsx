@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ModalCreator from "./modal/ModalCreator";
+import { useSelectedTime } from "../context/ReservationContext";
 
 const defaultTimes = [
   { id: 0, time: "9:00", isSet: false, isHalf: false, Deadline: "9:30" },
@@ -25,12 +26,12 @@ const defaultTimes = [
   { id: 20, time: "19:00", isSet: false, isHalf: false, Deadline: "19:30" },
   { id: 21, time: "19:30", isSet: false, isHalf: true, Deadline: "20:00" },
 ];
-// let selectedTime = null;
 
 // eslint-disable-next-line react/prop-types
 export default function TimeTable({ day }) {
   const [modalOn, setModalOn] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(null);
+  const { setSelectedTime } = useSelectedTime();
+
   return (
     <div>
       <h2 className="text-center">{day}</h2>
@@ -41,7 +42,7 @@ export default function TimeTable({ day }) {
               type="button"
               className="border-b-2 p-2 text-green-700"
               onClick={() => {
-                setSelectedTime(time);
+                setSelectedTime({ time, day });
                 setModalOn(true);
               }}
             >

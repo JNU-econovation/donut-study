@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelectedTime } from "../../context/ReservationContext";
 
 const dutation = [
   { id: 1, time: "30분" },
@@ -7,11 +8,19 @@ const dutation = [
   { id: 4, time: "2시간" },
 ];
 
+// eslint-disable-next-line react/prop-types
 export default function ReservationModal({ close }) {
   const [reservationDuration, setReservationDuration] = useState(0);
+  const {
+    selectedTime: { time: selectedTime, day: selectedDay },
+  } = useSelectedTime();
 
   const reserve = () => {
-    console.log("예약하기");
+    const reservationData = {
+      time: selectedTime,
+      duration: dutation.find(({ id }) => id === reservationDuration).time,
+    };
+    alert(JSON.stringify(reservationData));
   };
   return (
     <>
@@ -23,7 +32,9 @@ export default function ReservationModal({ close }) {
         <div className="flex flex-col">
           <div className="flex justify-between">
             <h3>예약하기</h3>
-            {/* <p>{selectedTime}</p> */}
+            <p>
+              {selectedTime}({selectedDay})
+            </p>
             <button type="button" onClick={close}>
               닫기
             </button>
@@ -55,6 +66,7 @@ export default function ReservationModal({ close }) {
               </button>
             ))}
           </div>
+
           <button onClick={reserve}>예약하기</button>
         </div>
       </div>
