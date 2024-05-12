@@ -30,11 +30,12 @@ const timeline = [
 
 function App() {
   return (
-    <section>
-      <header className="text-lg">그룹 스터디룸 6인 (최소 3인)</header>
+    <section className="p-4">
+      <header className="text-3xl text-center mb-2 border-b-2">
+        그룹 스터디룸 6인 (최소 3인)
+      </header>
       <nav className="flex gap-8">
-        <ul>
-          <h2 className="text-center">요일</h2>
+        <ul className="pt-12">
           {timeline.map(({ id, time }) => (
             <li
               key={id}

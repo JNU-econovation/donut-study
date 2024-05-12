@@ -34,6 +34,7 @@ ${selectedDate}일 (${resetvatedDay}) ${resetvatedTime}_${reservationData.durati
     alert(alertMessage);
     close();
   };
+
   return (
     <>
       <section
