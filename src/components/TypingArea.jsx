@@ -18,7 +18,7 @@ const TypingArea = () => {
   useEffect(() => {
     const interval = setInterval(callBackWordList, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [wordList]);
   return (
     <>
       <TypingLayout>
@@ -28,7 +28,11 @@ const TypingArea = () => {
           ))}
         </WordsLayout>
       </TypingLayout>
-      <TypingInput></TypingInput>
+      <TypingInput
+        wordList={wordList}
+        setWordList={setWordList}
+        callBackWordList={callBackWordList}
+      ></TypingInput>
     </>
   );
 };
