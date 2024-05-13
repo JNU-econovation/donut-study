@@ -1,5 +1,11 @@
+import TypingArea from "./components/TypingArea";
+
 const App = () => {
-  return <div></div>;
+  return (
+    <>
+      <TypingArea></TypingArea>
+    </>
+  );
 };
 
 export default App;
