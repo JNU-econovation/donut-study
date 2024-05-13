@@ -1,5 +1,9 @@
 import styled from "styled-components";
-const TypingInput = ({ content }) => {
+import { useState } from "react";
+
+const TypingInput = ({}) => {
+  const [content, setContent] = useState("");
+
   return (
     <>
       <TypingInputLayout>
