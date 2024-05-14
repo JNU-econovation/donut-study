@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const App = () => {
@@ -8,16 +9,14 @@ const App = () => {
       times.push(`${hour}:30`);
     }
   }
+
   return (
     <div>
       <StyledLayout>
         <h1>스터디룸 예약 서비스</h1>
         <StyledTimeTable>
           {times.map((time, index) => (
-            <StyledTimeSlot key={index}>
-              <StyledEmptyArea></StyledEmptyArea>
-              <StyledColorArea></StyledColorArea>
-            </StyledTimeSlot>
+            <TimeSlot key={index} />
           ))}
         </StyledTimeTable>
         <StyledButton>예약하기</StyledButton>
@@ -27,6 +26,20 @@ const App = () => {
 };
 
 export default App;
+
+const TimeSlot = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  return (
+    <StyledTimeSlot>
+      <StyledEmptyArea></StyledEmptyArea>
+      <StyledColorArea
+        isActive={isActive}
+        onClick={() => setIsActive(!isActive)}
+      ></StyledColorArea>
+    </StyledTimeSlot>
+  );
+};
 
 const StyledLayout = styled.div`
   display: flex;
@@ -69,11 +82,8 @@ const StyledEmptyArea = styled.div`
 
 const StyledColorArea = styled.div`
   width: 4rem;
-  background-color: #f0f0f0;
+  background-color: ${({ isActive }) => (isActive ? "#007bff" : "#f0f0f0")};
   height: 2rem;
   border: 1px solid #b9b9b9;
   cursor: pointer;
-  &:hover {
-    background-color: #e2e8f0;
-  }
 `;
