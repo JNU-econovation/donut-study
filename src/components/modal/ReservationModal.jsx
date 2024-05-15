@@ -38,11 +38,11 @@ ${selectedDate}일 (${resetvatedDay}) ${resetvatedTime}_${reservationData.durati
   return (
     <>
       <section
-        className="absolute top-0 left-0 bg-slate-400 w-[100%] h-[100%] opacity-80"
+        className="fixed top-0 left-0 bg-slate-400 w-[100%] h-[100%] opacity-80"
         onClick={close}
       />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 bg-white rounded-xl flex flex-col gap-2 p-4">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 bg-white rounded-xl flex flex-col gap-2 p-4">
         <div className="flex justify-between">
           <h3 className="text-xl text-center w-full border-b-2">예약하기</h3>
           <button type="button" onClick={close}>

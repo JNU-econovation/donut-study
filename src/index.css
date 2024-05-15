@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-300;
+  @apply bg-gray-300 relative;
 }
 
 #root {

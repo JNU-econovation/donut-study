@@ -7,7 +7,7 @@ export default function ModalCreator({ close }) {
     <>
       {createPortal(
         <ReservationModal close={close} />,
-        document.getElementById("root")
+        document.querySelector("body")
       )}
     </>
   );
