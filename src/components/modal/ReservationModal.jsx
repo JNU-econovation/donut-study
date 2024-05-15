@@ -28,6 +28,15 @@ export default function ReservationModal({ close }) {
     const resetvatedTime = selectedTime;
     const resetvatedDay = selectedDay;
 
+    if (!studentId || !name) {
+      alert("학번과 이름을 입력해주세요.");
+      return;
+    }
+    if (!reservationDuration) {
+      alert("예약 시간을 선택해주세요.");
+      return;
+    }
+
     const alertMessage = `예약이 완료되었습니다. 
 ${name}(${studentId})
 ${selectedDate}일 (${resetvatedDay}) ${resetvatedTime}_${reservationData.duration} 동안`;
