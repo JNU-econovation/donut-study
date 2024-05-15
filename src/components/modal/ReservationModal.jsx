@@ -38,7 +38,7 @@ ${selectedDate}일 (${resetvatedDay}) ${resetvatedTime}_${reservationData.durati
   return (
     <>
       <section
-        className="absolute top-0 left-0 bg-slate-400 w-screen h-screen opacity-80"
+        className="absolute top-0 left-0 bg-slate-400 w-[100%] h-[100%] opacity-80"
         onClick={close}
       />
 
