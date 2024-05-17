@@ -30,13 +30,13 @@ const StyledTimeSlot = styled.div`
 `;
 
 const StyledEmptyArea = styled.div`
-  width: 4rem;
+  width: 3.5rem;
   height: 1rem;
   box-sizing: border-box;
 `;
 
 const StyledColorArea = styled.div`
-  width: 4rem;
+  width: 3.5rem;
   background-color: ${({ $isActive }) => ($isActive ? "#007bff" : "#f0f0f0")};
   height: 2rem;
   border-bottom: 1px solid #b9b9b9;
