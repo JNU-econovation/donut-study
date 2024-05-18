@@ -11,14 +11,14 @@ const TypingArea = () => {
         return [...prevWordList, word[Math.floor(Math.random() * word.length)]];
       } else {
         alert("game over");
-        return [...prevWordList];
+        return [];
       }
     });
   };
   useEffect(() => {
-    const interval = setInterval(callBackWordList, 5000);
+    const interval = setInterval(callBackWordList, 3000);
     return () => clearInterval(interval);
-  }, [wordList]);
+  }, []);
   return (
     <>
       <TypingLayout>
