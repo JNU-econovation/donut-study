@@ -5,10 +5,19 @@ const TypingInput = ({ wordList, setWordList }) => {
   const [contents, setContents] = useState("");
 
   const onSubmit = () => {
-    const updateWords = wordList.filter((content) => content !== contents);
+    let found = false;
+    const updateWords = wordList.filter((content) => {
+      if (!found && content === contents) {
+        found = true;
+        return false;
+      }
+      return true;
+    });
+
     setWordList(updateWords);
     setContents("");
   };
+
   return (
     <>
       <TypingInputLayout>
