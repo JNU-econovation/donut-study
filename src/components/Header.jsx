@@ -28,7 +28,7 @@ const StyledHeader = styled.header`
 
   .header_menu {
     display: flex;
-    gap: 1rem;
+    gap: 1.4rem;
     svg {
       font-size: 1.5rem;
     }
