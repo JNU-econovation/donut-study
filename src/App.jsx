@@ -12,7 +12,7 @@ function App() {
 }
 
 const StyledRoot = styled.div`
-  padding-inline: 2rem;
+  padding-inline: 4rem;
 `;
 
 export default App;

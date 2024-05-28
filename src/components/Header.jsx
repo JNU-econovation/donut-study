@@ -19,11 +19,11 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
 
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
+    padding-block: 1rem;
   }
 
   .header_menu {
