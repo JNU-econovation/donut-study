@@ -1,16 +1,28 @@
 import styled from "styled-components";
 import { FaBell, FaUserCircle } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
+import { useState } from "react";
+import CreatePotal from "./modal/Portalcreater";
+import UploadModal from "./modal/UploadModal";
 
 export default function Header() {
+  const [modalOn, setModalOn] = useState(false);
+  const closeModal = () => setModalOn(false);
+
   return (
     <StyledHeader>
       <h1>veelog</h1>
       <div className="header_menu">
         <FaBell />
         <IoMdSearch />
+        <button onClick={() => setModalOn(true)}>새 글 작성</button>
         <FaUserCircle />
       </div>
+      {modalOn && (
+        <CreatePotal>
+          <UploadModal closeModal={closeModal} />
+        </CreatePotal>
+      )}
     </StyledHeader>
   );
 }
@@ -31,6 +43,13 @@ const StyledHeader = styled.header`
     gap: 1.4rem;
     svg {
       font-size: 1.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      cursor: pointer;
     }
   }
 `;
