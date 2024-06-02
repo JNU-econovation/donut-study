@@ -26,7 +26,7 @@ export default function ContentModal({ id, closeModal }) {
         <img src={thumbnail} alt="content image" />
         <div>
           <h2>{title}</h2>
-          <p>{content}</p>
+          <pre>{content}</pre>
         </div>
       </section>
     </StyledContentModal>
@@ -66,7 +66,7 @@ const StyledContentModal = styled.div`
       object-fit: cover;
     }
     div {
-      padding: 1rem;
+      padding: 3rem;
 
       h2 {
         font-size: 2rem;
@@ -74,8 +74,11 @@ const StyledContentModal = styled.div`
         margin: 1rem 0;
       }
 
-      p {
+      pre {
+        margin-top: 3rem;
         font-size: 1.2rem;
+        line-height: 1.5;
+        white-space: pre-wrap;
       }
     }
   }
