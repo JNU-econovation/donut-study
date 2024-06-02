@@ -50,3 +50,12 @@ const uploadImage = async (file, id) => {
   const path = data.path;
   return path;
 };
+
+export const getContentById = async (id) => {
+  let { data, error } = await supabase
+    .from(TABLE_NAME)
+    .select("*")
+    .eq("id", id);
+  if (error) throw new Error(error.message);
+  return data[0];
+};

@@ -55,12 +55,6 @@ export default function UploadModal({ closeModal }) {
 }
 
 const StyledUploadModal = styled.section`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: #7f7f7f;
-  opacity: 80;
-
   #background {
     position: fixed;
     top: 0;

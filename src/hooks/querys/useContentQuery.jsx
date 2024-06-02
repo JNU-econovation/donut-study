@@ -1,5 +1,6 @@
 import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import {
+  getContentById,
   getContents,
   getImageUrl,
   uploadContent,
@@ -55,4 +56,14 @@ export const useUploadContentMutation = ({
     },
   });
   return mutate;
+};
+
+export const useContentByIdQuery = (id) => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["content", id],
+    queryFn: () => getContentById(id),
+    staleTime: 1000 * 60 * 60,
+  });
+
+  return { data, isLoading, error };
 };
