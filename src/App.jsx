@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { supabase } from "./supabase";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Category from "./components/Category";
 import UploadButton from "./components/UploadButton";
 import Post from "./components/Post";
 import ViewModal from "./components/ViewModal";
 import NewPostModal from "./components/NewPostModal";
-import { supabase } from "./supabase";
-import { useEffect, useState } from "react";
 
 const App = () => {
   const [data, setData] = useState([]);
