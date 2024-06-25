@@ -12,8 +12,8 @@ const Post = ({ title, tag, onClick }) => {
 export default Post;
 
 const StyledPost = styled.div`
-  width: 21.18rem;
-  height: 17.6rem;
+  width: 16.5rem;
+  height: 14.6rem;
   border: 0.1rem solid #acacac;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;

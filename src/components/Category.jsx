@@ -16,7 +16,7 @@ const Category = ({ tags }) => {
 export default Category;
 
 const StyledCategory = styled.div`
-  width: 19rem;
+  width: 15rem;
   border: 0.1rem solid #acacac;
   border-radius: 0.3rem;
   padding: 1rem;
