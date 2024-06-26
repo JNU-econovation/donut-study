@@ -5,7 +5,7 @@ const TABLE_NAME = import.meta.env.VITE_TABLE_NAME;
 const BUCKET_NAME = import.meta.env.VITE_BUCKET_NAME;
 
 export const getContents = async () => {
-  let { data: blog, error } = await supabase.from(TABLE_NAME).select("*");
+  const { data: blog, error } = await supabase.from(TABLE_NAME).select("*");
   if (error) throw new Error(error.message);
   return blog;
 };
@@ -13,7 +13,7 @@ export const getContents = async () => {
 export const getImageUrl = async (contentId) => {
   const directory = `content/${contentId}`;
 
-  let { data: image, error } = supabase.storage
+  const { data: image, error } = supabase.storage
     .from(BUCKET_NAME)
     .getPublicUrl(directory);
   if (error) throw new Error(error.message);
@@ -53,7 +53,7 @@ const uploadImage = async (file, id) => {
 };
 
 export const getContentById = async (id) => {
-  let { data, error } = await supabase
+  const { data, error } = await supabase
     .from(TABLE_NAME)
     .select("*")
     .eq("id", id);
