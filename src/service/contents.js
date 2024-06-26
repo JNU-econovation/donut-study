@@ -27,6 +27,7 @@ export const uploadContent = async (title, content, file) => {
   const { data, error: insertError } = await supabase
     .from(TABLE_NAME)
     .insert([{ title, content, thumbnail, id: newId }]);
+  console.log(data, insertError);
   if (insertError) throw new Error(insertError.message);
   return data;
 };

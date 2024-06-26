@@ -40,7 +40,11 @@ export const useUploadContentMutation = ({
     mutationFn: () => {
       if (!file) {
         alert("파일을 선택해주세요");
-        return;
+        throw new Error("파일을 선택해주세요");
+      }
+      if (!title || !content) {
+        alert("제목과 내용을 입력해주세요");
+        throw new Error("제목과 내용을 입력해주세요");
       }
       return uploadContent(title, content, file[0]);
     },
@@ -53,6 +57,10 @@ export const useUploadContentMutation = ({
       resetForm();
       alert("글이 성공적으로 업로드되었습니다.");
       closeModal();
+    },
+    onError: () => {
+      setIsLoading(false);
+      alert("글 업로드에 실패하였습니다.");
     },
   });
   return mutate;
