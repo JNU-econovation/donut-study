@@ -4,6 +4,7 @@ import { IoMdSearch } from "react-icons/io";
 import { useState } from "react";
 import CreatePotal from "./modal/Portalcreater";
 import UploadModal from "./modal/UploadModal";
+import StyledBtn from "./ui/StyledBtn";
 
 export default function Header() {
   const [modalOn, setModalOn] = useState(false);
@@ -15,7 +16,11 @@ export default function Header() {
       <div className="header_menu">
         <FaBell />
         <IoMdSearch />
-        <button onClick={() => setModalOn(true)}>새 글 작성</button>
+        <StyledBtn
+          buttonText="새 글 작성"
+          onClickHander={() => setModalOn(true)}
+          color="default"
+        />
         <FaUserCircle />
       </div>
       {modalOn && (

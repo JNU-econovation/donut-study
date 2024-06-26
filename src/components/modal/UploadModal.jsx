@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import useUpload from "../../hooks/useUpload";
+import StyledBtn from "../ui/StyledBtn";
 
 export default function UploadModal({ closeModal }) {
   const {
@@ -23,7 +24,11 @@ export default function UploadModal({ closeModal }) {
       <section id="mainSection">
         <div id="mainSection_header">
           <h2>새 글 작성</h2>
-          <button onClick={closeModal}>닫기</button>
+          <StyledBtn
+            color="primary"
+            buttonText="닫기"
+            onClickHander={() => closeModal()}
+          />
         </div>
         <form onSubmit={handleSubmit}>
           <input
@@ -82,14 +87,6 @@ const StyledUploadModal = styled.section`
         font-size: 1.5rem;
         font-weight: bold;
         padding-block: 1rem;
-      }
-      button {
-        padding: 0.5rem 1rem;
-        color: #20c997;
-        background-color: white;
-        border: 1px solid #20c997;
-        border-radius: 100px;
-        cursor: pointer;
       }
     }
 
