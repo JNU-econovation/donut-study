@@ -13,8 +13,13 @@
     "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0",
     "@slack/webhook": "^7.0.2",
+    "@supabase/supabase-js": "^2.43.4",
+    "@tanstack/react-query": "^5.40.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "styled-components": "^6.1.11",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
